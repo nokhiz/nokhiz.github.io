@@ -5,9 +5,9 @@
 Hello, Servus,
 I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, literature, and the arts. I believe in the power of creativity and innovation to make a positive impact on the world.
 
-## Education
+## 📚 Education
 
-| **Degree**                                  | B. Eng., Industrial Engineering                          | M. Sc., Business Administration and Engineering       |
+| 🎓  **Degree**                            | 🛫  `B. Eng.` Industrial Engineering                          | 🚀 `M. Sc.` Business Administration and Engineering       |
 | ------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 | **University**                              | University of Applied Science Cologne                     | University of Applied Science Berlin                       |
 | **Graduation Year**                         | 2016                                                     | 2018                                                     |
@@ -15,7 +15,72 @@ I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, l
 | **Campus**                                  | Gummersbach                                               | Berlin, Schöneweide                                   |
 
 
-## Experience 
+## 🎨 Interests
+
+I find joy and inspiration in a diverse range of interests:
+
+### Reading
+> I have a deep passion for immersing myself in novels, particularly those within the captivating realms of science fiction and fantasy.
+
+### Tech Start-Ups
+> I am fascinated by the dynamic world of startups, drawn to the innovative spirit and the drive to create meaningful change.
+
+### Sports
+> Staying active is crucial to my lifestyle. Whether it's maintaining fitness, enjoying a refreshing jog, or engaging in team sports, I value the balance of physical activity in my routine.
+
+### Self Development & Learning
+> I am dedicated to continuous growth and learning. Whether it's acquiring new skills, staying updated on industry trends, or exploring personal development, I believe in the importance of lifelong learning for both personal and professional enrichment.
+
+
+## 🤹 Soft Skills 
+
+### Lifelong Learning & Executing:
+> I am deeply committed to the journey of continuous learning, always seeking opportunities to expand my knowledge and seamlessly applying what I learn into practical execution. This commitment ensures that my skill set remains dynamic and always evolving.
+
+### Team Player:
+> I thrive in collaborative environments, where my enthusiasm and dedication contribute to the positive dynamics of the team. Building strong connections and fostering a cohesive work atmosphere is at the heart of how I approach every project.
+
+### Empathy:
+> My genuine understanding of others' perspectives, coupled with an innate ability to connect emotionally, allows me to create meaningful relationships. I believe in the power of empathy to strengthen team bonds and enhance overall collaboration.
+
+### Analytical Thinking:
+> I approach situations with a naturally analytical mindset, breaking down complex problems into clear and manageable components for strategic decision-making. This enables me to navigate challenges effectively and find innovative solutions.
+
+### Communication Skills:
+> My communication style is characterized by clarity and precision, both verbally and in writing. I excel in conveying ideas and information in a way that fosters understanding and collaboration, ensuring a smooth flow of communication within a team.
+
+### Perseverance:
+> In the face of challenges, I exhibit resilience and determination. I maintain a focus on long-term goals, approaching obstacles with a positive and proactive mindset. My perseverance is a driving force in overcoming hurdles and achieving success.
+
+### Action Competence:
+> I embrace a proactive approach to decision-making, taking decisive and effective actions with confidence and competence in various situations. This proactive mindset allows me to navigate uncertainties with agility and drive positive outcomes.
+
+---
+
+## 💻 Tech Skills
+
+Legend: 👌 Basics 👍 Good to Go 🤙 Professional 💯 Expert
+
+| **IT-Management**                | **Coding Languages**    | **Technologies**       | **Engines**            | **Database**            | **Cloud Provider**     |
+|----------------------------------|-------------------------|------------------------|------------------------|-------------------------|-------------------------|
+| IT Projekt Management   💯          | HTML / CSS / SCSS       | WebApp FrontEnd        | MQRabbit / Kafka       | MySQL / Postgres        |  AWS               |
+| Stakeholder & Partner Management 💯  | JavaScript              | WebApp Backend         | Talend (ETL)           | MongoDB / NoSQL         |     Azure                    |
+| Scrum, LeSS/SAFe  💯                 | TypeScript              | ML-Models              | ElesticSearch          | AWS RDS (all)           |        GCP              |
+| Atlassian (Jira, Confluence)  🤙    | Java                    | BlockChain (DLT)       | Kibana (ELK-Stack)     | Redis / ElasticMemory   |                         |
+| Ticket-Systeme  🤙                  | Python                  | Deep Learning          | Unity                  | DocumentDB / DynamoDB   |                         |
+| Agile / AWM        💯               | Go                      | Streaming              | Unreal Engine          | PostGIS                 |                         |
+| Kanban           💯                 | Elixir                  | Data Lake              | Splunk                 | CockroachDB             |                         |
+| Waterfall            🤙             | Solidity                | Data Science           | SAP                    | RAID Conecpt            |                         |
+| Design Thinking        🤙           | C#                      | DMS                    |                        | Data UML                |                         |
+| Event Storming           🤙         | C++                     | ERP (SAGE, SAP)        |                        |                         |                         |
+| Presentation            🤙          | C                       | MSI                    |                        |                         |                         |
+| BPMN 2.0                  🤙          |                         |                        |                        |                         |                         |
+| Start-Up                 💯         |                         |                        |                        |                         |                         |
+
+
+---
+
+## 📅 Experience 
 
 | Company                                           | Position                                                  | Period                                       |
 | -------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------|
@@ -32,18 +97,8 @@ I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, l
 | **Startplatz**                                    | StartUp Coach & Volunteer                                  | 06/2013 – 06/2018, Cologne, DE            |
 | **Tutor & Mentor (TH Köln)**                      | TH Köln                                                    | 06/2013 – 06/2018, Cologne, DE            |
 
-## Interests
 
-I find joy and inspiration in a diverse range of interests:
-
-- **Reading:** I have a deep passion for immersing myself in novels, particularly those within the captivating realms of science fiction and fantasy.
-- **Travel:** Exploring new cultures and cuisines fuels my sense of wanderlust and serves as a wellspring of creativity and personal growth.
-- **Start-Ups:** I am fascinated by the dynamic world of startups, drawn to the innovative spirit and the drive to create meaningful change.
-- **Sports:** Staying active is crucial to my lifestyle. Whether it's maintaining fitness, enjoying a refreshing jog, or engaging in team sports, I value the balance of physical activity in my routine.
-- **Self Development and Learning:** I am dedicated to continuous growth and learning. Whether it's acquiring new skills, staying updated on industry trends, or exploring personal development, I believe in the importance of lifelong learning for both personal and professional enrichment.
-
-
-## Contact
+## 📞 Contact
 
 - Email: [mg.nz@icloud.com](mailto:mg.nz@icloud.com)
 - LinkedIn: [Meraj Nokhiz](https://www.linkedin.com/in/nokhiz/)
