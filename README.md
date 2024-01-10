@@ -5,16 +5,6 @@
 Hello, Servus,
 I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, literature, and the arts. I believe in the power of creativity and innovation to make a positive impact on the world.
 
-## 📚  Education
-
-| 🎓  **Degree**                            | 🛫  `B. Eng.` Industrial Engineering                          | 🚀 `M. Sc.` Business Administration and Engineering       |
-| ------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| **University**                              | University of Applied Science Cologne                     | University of Applied Science Berlin                       |
-| **Graduation Year**                         | 2016                                                     | 2018                                                     |
-| **Institution**                             | Technische Hochschule Köln (TH Köln)                     | Hochschule für Technik und Wirtschaft Berlin (HTW)    |
-| **Campus**                                  | Gummersbach                                               | Berlin, Schöneweide                                   |
-
-
 ## 🎨  Interests
 
 I find joy and inspiration in a diverse range of interests:
@@ -30,6 +20,17 @@ I find joy and inspiration in a diverse range of interests:
 
 ### Self Development & Learning
 > I am dedicated to continuous growth and learning. Whether it's acquiring new skills, staying updated on industry trends, or exploring personal development, I believe in the importance of lifelong learning for both personal and professional enrichment.
+
+
+## 📚  Education
+
+| 🎓  **Degree**                            | 🛫  `B. Eng.` Industrial Engineering                          | 🚀 `M. Sc.` Business Administration and Engineering       |
+| ------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| **University**                              | University of Applied Science Cologne                     | University of Applied Science Berlin                       |
+| **Graduation Year**                         | 2016                                                     | 2018                                                     |
+| **Institution**                             | Technische Hochschule Köln (TH Köln)                     | Hochschule für Technik und Wirtschaft Berlin (HTW)    |
+| **Campus**                                  | Gummersbach                                               | Berlin, Schöneweide                                   |
+
 
 ## 🤹  Soft Skills 
 
