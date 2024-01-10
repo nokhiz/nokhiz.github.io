@@ -19,18 +19,17 @@ I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, l
 
 I find joy and inspiration in a diverse range of interests:
 
-### Reading
-> I have a deep passion for immersing myself in novels, particularly those within the captivating realms of science fiction and fantasy.
-
-### Tech Start-Ups
+### Tech & Start-Ups
 > I am fascinated by the dynamic world of startups, drawn to the innovative spirit and the drive to create meaningful change.
 
 ### Sports
 > Staying active is crucial to my lifestyle. Whether it's maintaining fitness, enjoying a refreshing jog, or engaging in team sports, I value the balance of physical activity in my routine.
 
+### Reading
+> I have a deep passion for immersing myself in novels, particularly those within the captivating realms of science fiction and fantasy.
+
 ### Self Development & Learning
 > I am dedicated to continuous growth and learning. Whether it's acquiring new skills, staying updated on industry trends, or exploring personal development, I believe in the importance of lifelong learning for both personal and professional enrichment.
-
 
 ## 🤹  Soft Skills 
 
@@ -55,27 +54,25 @@ I find joy and inspiration in a diverse range of interests:
 ### Action Competence:
 > I embrace a proactive approach to decision-making, taking decisive and effective actions with confidence and competence in various situations. This proactive mindset allows me to navigate uncertainties with agility and drive positive outcomes.
 
----
-
 ## 💻  Tech Skills
 
 Legend: 👌 Basics 👍 Good to Go 🤙 Professional 💯 Expert
 
 | **IT-Management**                | **Coding Languages**    | **Technologies**       | **Engines**            | **Database**            | **Cloud Provider**     |
 |----------------------------------|-------------------------|------------------------|------------------------|-------------------------|-------------------------|
-| IT Projekt Management   💯          | HTML / CSS / SCSS       | WebApp FrontEnd        | MQRabbit / Kafka       | MySQL / Postgres        |  AWS               |
-| Stakeholder & Partner Management 💯  | JavaScript              | WebApp Backend         | Talend (ETL)           | MongoDB / NoSQL         |     Azure                    |
-| Scrum, LeSS/SAFe  💯                 | TypeScript              | ML-Models              | ElesticSearch          | AWS RDS (all)           |        GCP              |
-| Atlassian (Jira, Confluence)  🤙    | Java                    | BlockChain (DLT)       | Kibana (ELK-Stack)     | Redis / ElasticMemory   |                         |
-| Ticket-Systeme  🤙                  | Python                  | Deep Learning          | Unity                  | DocumentDB / DynamoDB   |                         |
-| Agile / AWM        💯               | Go                      | Streaming              | Unreal Engine          | PostGIS                 |                         |
-| Kanban           💯                 | Elixir                  | Data Lake              | Splunk                 | CockroachDB             |                         |
-| Waterfall            🤙             | Solidity                | Data Science           | SAP                    | RAID Conecpt            |                         |
-| Design Thinking        🤙           | C#                      | DMS                    |                        | Data UML                |                         |
-| Event Storming           🤙         | C++                     | ERP (SAGE, SAP)        |                        |                         |                         |
-| Presentation            🤙          | C                       | MSI                    |                        |                         |                         |
-| BPMN 2.0                  🤙          |                         |                        |                        |                         |                         |
-| Start-Up                 💯         |                         |                        |                        |                         |                         |
+| IT Projekt Management   💯          | HTML / CSS / SCSS       | WebApp FrontEnd        | MQRabbit / Kafka       | MySQL / Postgres        |  AWS                 |
+| Stakeholder & Partner Management 💯 | JavaScript              | WebApp Backend         | Talend (ETL)           | MongoDB / NoSQL         |  Azure               |
+| Scrum, LeSS/SAFe  💯                | TypeScript              | ML-Models              | ElesticSearch          | AWS RDS (all)           |  GCP                 |
+| Atlassian (Jira, Confluence)  🤙    | Java                    | BlockChain (DLT)       | Kibana (ELK-Stack)     | Redis / ElasticMemory   |                      |
+| Ticket-Systeme  🤙                  | Python                  | Deep Learning          | Unity                  | DocumentDB / DynamoDB   |                      |
+| Agile / AWM        💯               | Go                      | Streaming              | Unreal Engine          | PostGIS                 |                      |
+| Kanban           💯                 | Elixir                  | Data Lake              | Splunk                 | CockroachDB             |                      |
+| Waterfall            🤙             | Solidity                | Data Science           | SAP                    | RAID Conecpt            |                      |
+| Design Thinking        🤙           | C#                      | DMS                    |                        | Data UML                |                      |
+| Event Storming           🤙         | C++                     | ERP (SAGE, SAP)        |                        |                         |                      |
+| Presentation            🤙          | C                       | MSI                    |                        |                         |                      |
+| BPMN 2.0                  🤙        |                         |                        |                        |                         |                      |
+| Start-Up                 💯         |                         |                        |                        |                         |                       |
 
 
 ## 📅 Experience 
@@ -95,7 +92,6 @@ Legend: 👌 Basics 👍 Good to Go 🤙 Professional 💯 Expert
 | **Startplatz**    | StartUp Coach & Volunteer                     | 06/2013 – 06/2018 | Cologne, DE    |
 | **Tutor & Mentor** | TH Köln                                   | 06/2013 – 06/2018 | Cologne, DE    |
 
----
 
 ## 📞  Contact
 
