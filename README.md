@@ -5,7 +5,7 @@
 Hello, Servus,
 I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, literature, and the arts. I believe in the power of creativity and innovation to make a positive impact on the world.
 
-## 📚 Education
+## 📚  Education
 
 | 🎓  **Degree**                            | 🛫  `B. Eng.` Industrial Engineering                          | 🚀 `M. Sc.` Business Administration and Engineering       |
 | ------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
@@ -15,7 +15,7 @@ I'm  Meraj Nokhiz, a passionate individual with a keen interest in technology, l
 | **Campus**                                  | Gummersbach                                               | Berlin, Schöneweide                                   |
 
 
-## 🎨 Interests
+## 🎨  Interests
 
 I find joy and inspiration in a diverse range of interests:
 
@@ -32,7 +32,7 @@ I find joy and inspiration in a diverse range of interests:
 > I am dedicated to continuous growth and learning. Whether it's acquiring new skills, staying updated on industry trends, or exploring personal development, I believe in the importance of lifelong learning for both personal and professional enrichment.
 
 
-## 🤹 Soft Skills 
+## 🤹  Soft Skills 
 
 ### Lifelong Learning & Executing:
 > I am deeply committed to the journey of continuous learning, always seeking opportunities to expand my knowledge and seamlessly applying what I learn into practical execution. This commitment ensures that my skill set remains dynamic and always evolving.
@@ -57,7 +57,7 @@ I find joy and inspiration in a diverse range of interests:
 
 ---
 
-## 💻 Tech Skills
+## 💻  Tech Skills
 
 Legend: 👌 Basics 👍 Good to Go 🤙 Professional 💯 Expert
 
@@ -78,27 +78,26 @@ Legend: 👌 Basics 👍 Good to Go 🤙 Professional 💯 Expert
 | Start-Up                 💯         |                         |                        |                        |                         |                         |
 
 
----
-
 ## 📅 Experience 
 
-| Company                                           | Position                                                  | Period                                       |
-| -------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------|
-| **EPAM**                                          | Cloud Architect • Systems Architect • Staff Engineer       | Since 09/2023, Munich, DE                   |
-| **ZEISS**                                         | Cloud Architect • MLOps Engineer                           | 09/2022 – 08/2023, Munich, DE              |
-| **BMW**                                           | Cloud Architect • DevOps • Team Lead                       | 03/2021 – 09/2022, ITZ Munich, DE          |
-| **StartUp**                                       | Coach • Software Engineer                                 | 12/2020 – 03/2021, Munich, DE              |
-| **Inspired**                                      | Consultant • Software Engineer                             | 06/2020 – 12/2020, Munich, DE              |
-| **Work & Travel**                                 | Australia                                                  | 06/2019 – 06/2020, Sydney, AU               |
-| **Optimal Systems**                               | Solution Engineer • Professional Service                   | 06/2018 – 06/2019, Berlin, DE              |
-| **EAW**                                           | Consultive Masterthesis • BPMN 2.0                          | 09/2017 – 04/2018, Berlin, DE              |
-| **HiQ Projects**                                  | Consultant • Project Manager, Testing & Requirement        | 04/2015 – 04/2016, Cologne, DE            |
-| **KUKA**                                          | Technical Sales Consultant                                 | 09/2013 – 04/2014, Augsburg, DE           |
-| **Startplatz**                                    | StartUp Coach & Volunteer                                  | 06/2013 – 06/2018, Cologne, DE            |
-| **Tutor & Mentor (TH Köln)**                      | TH Köln                                                    | 06/2013 – 06/2018, Cologne, DE            |
+| Company          | Position                                       | Period               | Place         |
+| ----------------- | ---------------------------------------------- | -------------------- | ------------- |
+| **EPAM**          | Cloud Architect • Systems Architect • Staff Engineer | Since 09/2023        | Munich, DE     |
+| **ZEISS**         | Cloud Architect • MLOps Engineer               | 09/2022 – 08/2023    | Munich, DE     |
+| **BMW**           | Cloud Architect • DevOps • Team Lead           | 03/2021 – 09/2022 | Munich, DE     |
+| **StartUp**       | Coach • Software Engineer                     | 12/2020 – 03/2021    | Munich, DE     |
+| **Inspired**      | Consultant • Software Engineer                 | 06/2020 – 12/2020    | Munich, DE     |
+| **Work & Travel** | Australia                                      | 06/2019 – 06/2020 | Sydney, AU     |
+| **Optimal Systems**| Solution Engineer • Professional Service      | 06/2018 – 06/2019 | Berlin, DE     |
+| **EAW**           | Consultive Masterthesis • BPMN 2.0             | 09/2017 – 04/2018 | Berlin, DE     |
+| **HiQ Projects**  | Consultant • Project Manager, Testing & Requirement | 04/2015 – 04/2016 | Cologne, DE    |
+| **KUKA**          | Technical Sales Consultant                    | 09/2013 – 04/2014 | Augsburg, DE  |
+| **Startplatz**    | StartUp Coach & Volunteer                     | 06/2013 – 06/2018 | Cologne, DE    |
+| **Tutor & Mentor** | TH Köln                                   | 06/2013 – 06/2018 | Cologne, DE    |
 
+---
 
-## 📞 Contact
+## 📞  Contact
 
 - Email: [mg.nz@icloud.com](mailto:mg.nz@icloud.com)
 - LinkedIn: [Meraj Nokhiz](https://www.linkedin.com/in/nokhiz/)
