@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.7"><title>Cloud & IT Expert</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.BgtERfkY.css"></head> <body data-astro-cid-sckkx6r4> <nav class="fixed top-0 left-0 right-0 z-50 bg-primary text-textLight shadow-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex justify-between items-center h-16"> <!-- Brand/Logo --> <div class="flex-shrink-0"> <a href="#home" class="text-xl font-bold hover:text-secondary transition-colors">Cloud & IT Expert</a> </div> <!-- Desktop Navigation --> <div class="hidden md:block"> <div class="ml-10 flex items-baseline space-x-4"> <a href="#home" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a> <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a> <a href="#projects" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a> <a href="#blog" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a> <a href="#contact" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a> </div> </div> <!-- Mobile menu button --> <div class="md:hidden"> <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-textLight hover:text-secondary hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-colors"> <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <!-- Mobile Navigation Menu --> <div id="mobile-menu" class="md:hidden hidden"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary border-t border-secondary/20"> <a href="#home" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a> <a href="#skills" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a> <a href="#projects" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a> <a href="#blog" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Blog</a> <a href="#about" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a> <a href="#contact" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a> </div> </div> </nav> <script>
+  document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+      menu.classList.toggle('hidden');
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Close mobile menu after clicking
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script> <div class="pt-16" data-astro-cid-sckkx6r4>  <div class="bg-background text-textPrimary min-h-screen"> <div class="container mx-auto px-4 py-20"> <!-- Back Navigation --> <div class="mb-8"> <a href="#projects" class="inline-flex items-center text-secondary hover:text-secondary/80 transition-colors"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg>
+Back to Projects
+</a> </div> <!-- Project Header --> <div class="mb-12"> <div class="flex flex-wrap gap-2 mb-4"> <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium"> security </span><span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium"> cloud </span> </div> <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-textPrimary"> Zero-Trust Network Implementation </h1> <p class="text-xl text-textPrimary/80 mb-6 leading-relaxed"> Implemented a comprehensive zero-trust security model across hybrid cloud environments, enhancing data protection. </p> <div class="flex flex-wrap items-center gap-6 text-sm text-textPrimary/60"> <span>📅 August 5, 2024</span> <span>🎯 Zero Security Breaches</span> </div> </div> <!-- Tech Stack --> <div class="mb-12"> <h2 class="text-2xl font-heading font-semibold mb-6 text-textPrimary">Technologies Used</h2> <div class="flex flex-wrap gap-3"> <span class="bg-primary text-textPrimary px-4 py-2 rounded-lg font-medium border border-secondary/20"> Azure AD </span><span class="bg-primary text-textPrimary px-4 py-2 rounded-lg font-medium border border-secondary/20"> VPN </span><span class="bg-primary text-textPrimary px-4 py-2 rounded-lg font-medium border border-secondary/20"> IAM </span> </div> </div> <!-- Project Content --> <div class="prose prose-lg prose-invert max-w-none"> <h1 id="zero-trust-network-implementation">Zero-Trust Network Implementation</h1>
+<h2 id="overview">Overview</h2>
+<p>Designed and deployed a comprehensive zero-trust security architecture that eliminated traditional network perimeter security in favor of identity-based access controls.</p>
+<h2 id="challenge">Challenge</h2>
+<p>Legacy security models were inadequate:</p>
+<ul>
+<li>Perimeter-based security easily bypassed</li>
+<li>Lateral movement within networks</li>
+<li>Inconsistent access controls across environments</li>
+<li>Difficulty securing remote and cloud access</li>
+<li>Compliance issues with modern security standards</li>
+</ul>
+<h2 id="solution">Solution</h2>
+<h3 id="zero-trust-framework">Zero-Trust Framework</h3>
+<ul>
+<li><strong>Identity-Centric Security</strong>: All access based on user and device identity</li>
+<li><strong>Micro-Segmentation</strong>: Network segmentation at the workload level</li>
+<li><strong>Continuous Verification</strong>: Ongoing authentication and authorization</li>
+<li><strong>Least Privilege Access</strong>: Minimal required permissions for each action</li>
+</ul>
+<h3 id="implementation-steps">Implementation Steps</h3>
+<ol>
+<li><strong>Assessment</strong>: Evaluated current security posture and gaps</li>
+<li><strong>Policy Design</strong>: Created zero-trust policies and procedures</li>
+<li><strong>Technology Stack</strong>: Selected and integrated security tools</li>
+<li><strong>Pilot Deployment</strong>: Tested approach in controlled environment</li>
+<li><strong>Enterprise Rollout</strong>: Gradual implementation across organization</li>
+<li><strong>Monitoring &#x26; Optimization</strong>: Continuous improvement based on metrics</li>
+</ol>
+<h2 id="technologies-used">Technologies Used</h2>
+<ul>
+<li><strong>Identity</strong>: Azure AD, Active Directory</li>
+<li><strong>Network Security</strong>: Next-Gen Firewalls, Micro-Segmentation</li>
+<li><strong>Access Control</strong>: IAM, Policy Engines</li>
+<li><strong>Endpoint Security</strong>: EDR, Device Management</li>
+<li><strong>Monitoring</strong>: SIEM, Security Analytics</li>
+<li><strong>Compliance</strong>: Automated compliance reporting</li>
+</ul>
+<h2 id="results">Results</h2>
+<ul>
+<li><strong>Zero Security Breaches</strong>: No successful attacks since implementation</li>
+<li><strong>50% Reduction in Security Incidents</strong>: Proactive prevention of threats</li>
+<li><strong>Improved Compliance</strong>: Automated compliance with security standards</li>
+<li><strong>Enhanced Visibility</strong>: Complete visibility into all access attempts</li>
+<li><strong>Operational Efficiency</strong>: Reduced manual security tasks</li>
+</ul>
+<h2 id="key-learnings">Key Learnings</h2>
+<ol>
+<li><strong>Cultural Change</strong>: Building security awareness across all teams</li>
+<li><strong>Technology Integration</strong>: Making different security tools work together</li>
+<li><strong>User Experience</strong>: Balancing security with usability</li>
+<li><strong>Continuous Monitoring</strong>: Importance of real-time security analytics</li>
+<li><strong>Policy Management</strong>: Scaling security policies across large organizations</li>
+</ol>
+<p>This implementation established the organization as a leader in modern security practices, protecting sensitive data while enabling business agility.</p> </div> <!-- Navigation --> <div class="mt-16 pt-8 border-t border-secondary/20"> <div class="flex justify-between items-center"> <a href="#projects" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+← View All Projects
+</a> <a href="#contact" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+Discuss Similar Work →
+</a> </div> </div> </div> </div>  </div>  </body></html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.7"><title>Cloud & IT Expert</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.BgtERfkY.css"></head> <body data-astro-cid-sckkx6r4> <nav class="fixed top-0 left-0 right-0 z-50 bg-primary text-textLight shadow-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex justify-between items-center h-16"> <!-- Brand/Logo --> <div class="flex-shrink-0"> <a href="#home" class="text-xl font-bold hover:text-secondary transition-colors">Cloud & IT Expert</a> </div> <!-- Desktop Navigation --> <div class="hidden md:block"> <div class="ml-10 flex items-baseline space-x-4"> <a href="#home" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a> <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a> <a href="#projects" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a> <a href="#blog" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a> <a href="#contact" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a> </div> </div> <!-- Mobile menu button --> <div class="md:hidden"> <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-textLight hover:text-secondary hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-colors"> <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <!-- Mobile Navigation Menu --> <div id="mobile-menu" class="md:hidden hidden"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary border-t border-secondary/20"> <a href="#home" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a> <a href="#skills" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a> <a href="#projects" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a> <a href="#blog" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Blog</a> <a href="#about" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a> <a href="#contact" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a> </div> </div> </nav> <script>
+  document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+      menu.classList.toggle('hidden');
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Close mobile menu after clicking
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script> <div class="pt-16" data-astro-cid-sckkx6r4>  <div class="bg-background text-textPrimary min-h-screen"> <div class="container mx-auto px-4 py-20"> <!-- Back Navigation --> <div class="mb-8"> <a href="#blog" class="inline-flex items-center text-secondary hover:text-secondary/80 transition-colors"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg>
+Back to Blog
+</a> </div> <!-- Blog Post Header --> <div class="mb-12"> <div class="flex items-center gap-4 mb-4"> <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium"> Kubernetes </span> <span class="text-textPrimary/60 text-sm"> October 22, 2024 </span> </div> <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-textPrimary"> Advanced Kubernetes Networking Patterns </h1> <p class="text-xl text-textPrimary/80 leading-relaxed"> Dive deep into service mesh architectures, network policies, and ingress controllers. </p> </div> <!-- Blog Content --> <div class="prose prose-lg prose-invert max-w-none"> <h1 id="advanced-kubernetes-networking-patterns">Advanced Kubernetes Networking Patterns</h1>
+<p>Kubernetes networking is fundamental to running applications at scale, but many teams stop at basic service discovery. Advanced networking patterns unlock true cloud-native capabilities.</p>
+<h2 id="service-mesh-architecture">Service Mesh Architecture</h2>
+<h3 id="istio-service-mesh">Istio Service Mesh</h3>
+<p>Service mesh provides layer 7 traffic management:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">networking.istio.io/v1beta1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">VirtualService</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">reviews-route</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  http</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">route</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">destination</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        host</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">reviews</span></span>
+<span class="line"><span style="color:#85E89D">        subset</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">      weight</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">90</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">destination</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        host</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">reviews</span></span>
+<span class="line"><span style="color:#85E89D">        subset</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v2</span></span>
+<span class="line"><span style="color:#85E89D">      weight</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span></code></pre>
+<h3 id="traffic-management-features">Traffic Management Features</h3>
+<ul>
+<li><strong>Load Balancing</strong>: Intelligent routing algorithms</li>
+<li><strong>Circuit Breaking</strong>: Automatic failure detection</li>
+<li><strong>Retries and Timeouts</strong>: Resilient communication patterns</li>
+<li><strong>Traffic Splitting</strong>: Canary deployments and A/B testing</li>
+</ul>
+<h2 id="network-policies">Network Policies</h2>
+<h3 id="zero-trust-networking">Zero-Trust Networking</h3>
+<p>Implement network segmentation at the pod level:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">networking.k8s.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">NetworkPolicy</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-allow</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  podSelector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api</span></span>
+<span class="line"><span style="color:#85E89D">  policyTypes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">Ingress</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">Egress</span></span>
+<span class="line"><span style="color:#85E89D">  ingress</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">from</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">podSelector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frontend</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">protocol</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">TCP</span></span>
+<span class="line"><span style="color:#85E89D">      port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">8080</span></span>
+<span class="line"><span style="color:#85E89D">  egress</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">to</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">podSelector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">database</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">protocol</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">TCP</span></span>
+<span class="line"><span style="color:#85E89D">      port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5432</span></span></code></pre>
+<h2 id="ingress-controllers">Ingress Controllers</h2>
+<h3 id="nginx-ingress-controller">NGINX Ingress Controller</h3>
+<p>Advanced routing capabilities:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">networking.k8s.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Ingress</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">advanced-routing</span></span>
+<span class="line"><span style="color:#85E89D">  annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/rewrite-target</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/ssl-redirect</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"true"</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/rate-limit</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"10"</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/rate-limit-window</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"1m"</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  tls</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">hosts</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">myapp.example.com</span></span>
+<span class="line"><span style="color:#85E89D">    secretName</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">tls-secret</span></span>
+<span class="line"><span style="color:#85E89D">  rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">host</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp.example.com</span></span>
+<span class="line"><span style="color:#85E89D">    http</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      paths</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/api</span></span>
+<span class="line"><span style="color:#85E89D">        pathType</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prefix</span></span>
+<span class="line"><span style="color:#85E89D">        backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          service</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-service</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              number</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#85E89D">        pathType</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prefix</span></span>
+<span class="line"><span style="color:#85E89D">        backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          service</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frontend-service</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              number</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span></code></pre>
+<h3 id="traefik-ingress">Traefik Ingress</h3>
+<p>Modern ingress with automatic service discovery:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">traefik.containo.us/v1alpha1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">IngressRoute</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-route</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  entryPoints</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">websecure</span></span>
+<span class="line"><span style="color:#85E89D">  routes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">match</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Host(`api.example.com`) &#x26;&#x26; PathPrefix(`/v1`)</span></span>
+<span class="line"><span style="color:#85E89D">    kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Rule</span></span>
+<span class="line"><span style="color:#85E89D">    services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-v1</span></span>
+<span class="line"><span style="color:#85E89D">      port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#85E89D">    middlewares</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-auth</span></span>
+<span class="line"><span style="color:#85E89D">      namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">default</span></span>
+<span class="line"><span style="color:#85E89D">  tls</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    certResolver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">letsencrypt</span></span></code></pre>
+<h2 id="advanced-patterns">Advanced Patterns</h2>
+<h3 id="multi-cluster-networking">Multi-Cluster Networking</h3>
+<p>Connect multiple Kubernetes clusters:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Submariner configuration</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">submariner.io/v1alpha1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Cluster</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">cluster-east</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  clusterID</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">east-cluster</span></span>
+<span class="line"><span style="color:#85E89D">  clusterCIDR</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">10.0.0.0/14</span></span>
+<span class="line"><span style="color:#85E89D">  serviceCIDR</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">172.30.0.0/16</span></span></code></pre>
+<h3 id="service-discovery-patterns">Service Discovery Patterns</h3>
+<h4 id="client-side-load-balancing">Client-Side Load Balancing</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Client-side service discovery</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> services</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> discoverServices</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'api-service'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> healthyService</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> services.</span><span style="color:#B392F0">find</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">s</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> s.status </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'healthy'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`${</span><span style="color:#E1E4E8">healthyService</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">url</span><span style="color:#9ECBFF">}/api/data`</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h4 id="dns-based-discovery">DNS-Based Discovery</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Service</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-service</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api</span></span>
+<span class="line"><span style="color:#85E89D">  ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#85E89D">    targetPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">8080</span></span>
+<span class="line"><span style="color:#85E89D">  type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ClusterIP</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Endpoints</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">api-service</span></span>
+<span class="line"><span style="color:#85E89D">subsets</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">addresses</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">ip</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"10.0.1.10"</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">ip</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"10.0.1.11"</span></span>
+<span class="line"><span style="color:#85E89D">  ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">8080</span></span></code></pre>
+<h2 id="network-security">Network Security</h2>
+<h3 id="mtls-implementation">mTLS Implementation</h3>
+<p>Mutual TLS for service-to-service communication:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">cert-manager.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Certificate</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">service-cert</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  secretName</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">service-tls</span></span>
+<span class="line"><span style="color:#85E89D">  issuerRef</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ca-issuer</span></span>
+<span class="line"><span style="color:#85E89D">    kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Issuer</span></span>
+<span class="line"><span style="color:#85E89D">  dnsNames</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">service-name.namespace.svc.cluster.local</span></span></code></pre>
+<h3 id="network-encryption">Network Encryption</h3>
+<p>End-to-end encryption patterns:</p>
+<ul>
+<li><strong>WireGuard</strong>: Fast VPN tunnels</li>
+<li><strong>Cilium</strong>: eBPF-based networking</li>
+<li><strong>Calico</strong>: Policy-driven networking</li>
+</ul>
+<h2 id="monitoring-and-observability">Monitoring and Observability</h2>
+<h3 id="network-monitoring-stack">Network Monitoring Stack</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Prometheus service monitor</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring.coreos.com/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ServiceMonitor</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">network-monitor</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">network-exporter</span></span>
+<span class="line"><span style="color:#85E89D">  endpoints</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">    interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">30s</span></span></code></pre>
+<h3 id="distributed-tracing">Distributed Tracing</h3>
+<p>Track requests across services:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> tracer</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'dd-trace'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">init</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> span</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> tracer.</span><span style="color:#B392F0">scope</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">active</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Add network context</span></span>
+<span class="line"><span style="color:#E1E4E8">span.</span><span style="color:#B392F0">setTag</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'network.source'</span><span style="color:#E1E4E8">, req.connection.remoteAddress);</span></span>
+<span class="line"><span style="color:#E1E4E8">span.</span><span style="color:#B392F0">setTag</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'network.destination'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'api-service:8080'</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h2 id="performance-optimization">Performance Optimization</h2>
+<h3 id="connection-pooling">Connection Pooling</h3>
+<p>Optimize connection usage:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ConfigMap</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">envoy-config</span></span>
+<span class="line"><span style="color:#85E89D">data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  envoy.yaml</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">    static_resources:</span></span>
+<span class="line"><span style="color:#9ECBFF">      listeners:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - address:</span></span>
+<span class="line"><span style="color:#9ECBFF">          socket_address:</span></span>
+<span class="line"><span style="color:#9ECBFF">            address: 0.0.0.0</span></span>
+<span class="line"><span style="color:#9ECBFF">            port_value: 80</span></span>
+<span class="line"><span style="color:#9ECBFF">        filter_chains:</span></span>
+<span class="line"><span style="color:#9ECBFF">        - filters:</span></span>
+<span class="line"><span style="color:#9ECBFF">          - name: envoy.http_connection_manager</span></span>
+<span class="line"><span style="color:#9ECBFF">            config:</span></span>
+<span class="line"><span style="color:#9ECBFF">              route_config:</span></span>
+<span class="line"><span style="color:#9ECBFF">                routes:</span></span>
+<span class="line"><span style="color:#9ECBFF">                - match:</span></span>
+<span class="line"><span style="color:#9ECBFF">                    prefix: "/"</span></span>
+<span class="line"><span style="color:#9ECBFF">                  route:</span></span>
+<span class="line"><span style="color:#9ECBFF">                    cluster: api-cluster</span></span>
+<span class="line"><span style="color:#9ECBFF">              http_filters:</span></span>
+<span class="line"><span style="color:#9ECBFF">              - name: envoy.router</span></span>
+<span class="line"><span style="color:#9ECBFF">      clusters:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - name: api-cluster</span></span>
+<span class="line"><span style="color:#9ECBFF">        connect_timeout: 0.25s</span></span>
+<span class="line"><span style="color:#9ECBFF">        type: STRICT_DNS</span></span>
+<span class="line"><span style="color:#9ECBFF">        lb_policy: ROUND_ROBIN</span></span>
+<span class="line"><span style="color:#9ECBFF">        hosts:</span></span>
+<span class="line"><span style="color:#9ECBFF">        - socket_address:</span></span>
+<span class="line"><span style="color:#9ECBFF">            address: api-service</span></span>
+<span class="line"><span style="color:#9ECBFF">            port_value: 8080</span></span></code></pre>
+<h3 id="caching-strategies">Caching Strategies</h3>
+<p>Implement intelligent caching:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">networking.k8s.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Ingress</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">cached-ingress</span></span>
+<span class="line"><span style="color:#85E89D">  annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/cache-enable</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"true"</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/cache-methods</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"GET HEAD"</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/cache-key</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"$scheme$request_uri"</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">  # ... ingress spec</span></span></code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<ol>
+<li>
+<p><strong>DNS Resolution Problems</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Check DNS resolution</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -it</span><span style="color:#79B8FF"> --rm</span><span style="color:#9ECBFF"> debug</span><span style="color:#79B8FF"> --image=busybox</span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> nslookup</span><span style="color:#9ECBFF"> service-name</span></span></code></pre>
+</li>
+<li>
+<p><strong>Network Policy Conflicts</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Test network connectivity</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -it</span><span style="color:#79B8FF"> --rm</span><span style="color:#9ECBFF"> debug</span><span style="color:#79B8FF"> --image=busybox</span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> telnet</span><span style="color:#9ECBFF"> service-name</span><span style="color:#79B8FF"> 80</span></span></code></pre>
+</li>
+<li>
+<p><strong>Service Mesh Issues</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Check Istio proxy status</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> exec</span><span style="color:#79B8FF"> -it</span><span style="color:#9ECBFF"> pod-name</span><span style="color:#79B8FF"> -c</span><span style="color:#9ECBFF"> istio-proxy</span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> pilot-agent</span><span style="color:#9ECBFF"> request</span><span style="color:#9ECBFF"> GET</span><span style="color:#9ECBFF"> stats</span></span></code></pre>
+</li>
+</ol>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Design for Failure</strong>: Implement circuit breakers and retries</li>
+<li><strong>Monitor Everything</strong>: Track latency, throughput, and error rates</li>
+<li><strong>Automate Security</strong>: Use network policies and service mesh</li>
+<li><strong>Test Networking</strong>: Include network tests in CI/CD pipelines</li>
+<li><strong>Plan for Scale</strong>: Design networks that grow with your applications</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Advanced Kubernetes networking goes beyond basic connectivity. By implementing service meshes, network policies, and sophisticated routing patterns, you create a robust, secure, and observable network foundation for your applications.</p>
+<p>The key is understanding that networking in Kubernetes is not just about connectivity—it’s about creating intelligent, self-healing communication patterns that scale with your applications.</p> </div> <!-- Navigation --> <div class="mt-16 pt-8 border-t border-secondary/20"> <div class="flex justify-between items-center"> <a href="#blog" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+← View All Posts
+</a> <a href="#contact" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+Discuss This Topic →
+</a> </div> </div> </div> </div>  </div>  </body></html>

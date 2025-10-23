@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.7"><title>Cloud & IT Expert</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.BgtERfkY.css"></head> <body data-astro-cid-sckkx6r4> <nav class="fixed top-0 left-0 right-0 z-50 bg-primary text-textLight shadow-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex justify-between items-center h-16"> <!-- Brand/Logo --> <div class="flex-shrink-0"> <a href="#home" class="text-xl font-bold hover:text-secondary transition-colors">Cloud & IT Expert</a> </div> <!-- Desktop Navigation --> <div class="hidden md:block"> <div class="ml-10 flex items-baseline space-x-4"> <a href="#home" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a> <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a> <a href="#projects" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a> <a href="#blog" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a> <a href="#contact" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a> </div> </div> <!-- Mobile menu button --> <div class="md:hidden"> <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-textLight hover:text-secondary hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-colors"> <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <!-- Mobile Navigation Menu --> <div id="mobile-menu" class="md:hidden hidden"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary border-t border-secondary/20"> <a href="#home" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a> <a href="#skills" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a> <a href="#projects" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a> <a href="#blog" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Blog</a> <a href="#about" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a> <a href="#contact" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a> </div> </div> </nav> <script>
+  document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+      menu.classList.toggle('hidden');
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Close mobile menu after clicking
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script> <div class="pt-16" data-astro-cid-sckkx6r4>  <div class="bg-background text-textPrimary min-h-screen"> <div class="container mx-auto px-4 py-20"> <!-- Back Navigation --> <div class="mb-8"> <a href="#projects" class="inline-flex items-center text-secondary hover:text-secondary/80 transition-colors"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg>
+Back to Projects
+</a> </div> <!-- Project Header --> <div class="mb-12"> <div class="flex flex-wrap gap-2 mb-4"> <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium"> cloud </span><span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium"> devops </span> </div> <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-textPrimary"> Multi-Cloud Infrastructure Migration </h1> <p class="text-xl text-textPrimary/80 mb-6 leading-relaxed"> Led the migration of legacy infrastructure to a multi-cloud environment, reducing costs by 40% and improving scalability. </p> <div class="flex flex-wrap items-center gap-6 text-sm text-textPrimary/60"> <span>📅 December 1, 2024</span> <span>🎯 40% Cost Reduction</span> </div> </div> <!-- Tech Stack --> <div class="mb-12"> <h2 class="text-2xl font-heading font-semibold mb-6 text-textPrimary">Technologies Used</h2> <div class="flex flex-wrap gap-3"> <span class="bg-primary text-textPrimary px-4 py-2 rounded-lg font-medium border border-secondary/20"> AWS </span><span class="bg-primary text-textPrimary px-4 py-2 rounded-lg font-medium border border-secondary/20"> Terraform </span><span class="bg-primary text-textPrimary px-4 py-2 rounded-lg font-medium border border-secondary/20"> Kubernetes </span> </div> </div> <!-- Project Content --> <div class="prose prose-lg prose-invert max-w-none"> <h1 id="multi-cloud-infrastructure-migration">Multi-Cloud Infrastructure Migration</h1>
+<h2 id="overview">Overview</h2>
+<p>Successfully led a comprehensive migration of a legacy monolithic infrastructure to a modern multi-cloud environment, demonstrating expertise in cloud architecture and DevOps practices.</p>
+<h2 id="challenge">Challenge</h2>
+<p>The client was running on a single cloud provider with:</p>
+<ul>
+<li>High operational costs due to vendor lock-in</li>
+<li>Limited scalability during peak loads</li>
+<li>Manual deployment processes causing downtime</li>
+<li>Lack of disaster recovery capabilities</li>
+</ul>
+<h2 id="solution">Solution</h2>
+<h3 id="architecture-design">Architecture Design</h3>
+<ul>
+<li><strong>Multi-Cloud Strategy</strong>: Implemented AWS and Azure for redundancy and cost optimization</li>
+<li><strong>Infrastructure as Code</strong>: Used Terraform for consistent, version-controlled infrastructure</li>
+<li><strong>Container Orchestration</strong>: Deployed applications using Kubernetes for portability</li>
+</ul>
+<h3 id="implementation-steps">Implementation Steps</h3>
+<ol>
+<li><strong>Assessment Phase</strong>: Analyzed existing infrastructure and application dependencies</li>
+<li><strong>Migration Planning</strong>: Created detailed migration roadmap with minimal downtime</li>
+<li><strong>Infrastructure Setup</strong>: Built new multi-cloud environment with automated pipelines</li>
+<li><strong>Data Migration</strong>: Migrated databases and storage with zero data loss</li>
+<li><strong>Testing &#x26; Validation</strong>: Comprehensive testing across all environments</li>
+<li><strong>Go-Live</strong>: Seamless transition with rollback capabilities</li>
+</ol>
+<h2 id="technologies-used">Technologies Used</h2>
+<ul>
+<li><strong>Cloud Platforms</strong>: AWS (EC2, RDS, S3, CloudFront), Azure (VMs, Storage, CDN)</li>
+<li><strong>Infrastructure</strong>: Terraform, CloudFormation</li>
+<li><strong>Containers</strong>: Docker, Kubernetes (EKS, AKS)</li>
+<li><strong>CI/CD</strong>: GitHub Actions, Jenkins</li>
+<li><strong>Monitoring</strong>: Prometheus, Grafana, CloudWatch</li>
+</ul>
+<h2 id="results">Results</h2>
+<ul>
+<li><strong>40% Cost Reduction</strong>: Optimized resource utilization across cloud providers</li>
+<li><strong>99.9% Uptime</strong>: Improved availability with multi-region deployment</li>
+<li><strong>50% Faster Deployments</strong>: Automated pipelines reduced deployment time</li>
+<li><strong>Enhanced Scalability</strong>: Auto-scaling capabilities for variable workloads</li>
+<li><strong>Disaster Recovery</strong>: Cross-cloud backup and failover capabilities</li>
+</ul>
+<h2 id="key-learnings">Key Learnings</h2>
+<ol>
+<li><strong>Cloud Cost Optimization</strong>: Strategic use of reserved instances and spot instances</li>
+<li><strong>Multi-Cloud Complexity</strong>: Managing networking, security, and monitoring across providers</li>
+<li><strong>Team Training</strong>: Upskilling team on cloud-native technologies</li>
+<li><strong>Change Management</strong>: Communicating benefits to stakeholders throughout migration</li>
+</ol>
+<p>This project showcased the ability to modernize legacy systems while maintaining business continuity and improving operational efficiency.</p> </div> <!-- Navigation --> <div class="mt-16 pt-8 border-t border-secondary/20"> <div class="flex justify-between items-center"> <a href="#projects" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+← View All Projects
+</a> <a href="#contact" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+Discuss Similar Work →
+</a> </div> </div> </div> </div>  </div>  </body></html>

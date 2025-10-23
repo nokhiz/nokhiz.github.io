@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.7"><title>Cloud & IT Expert</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.BgtERfkY.css"></head> <body data-astro-cid-sckkx6r4> <nav class="fixed top-0 left-0 right-0 z-50 bg-primary text-textLight shadow-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex justify-between items-center h-16"> <!-- Brand/Logo --> <div class="flex-shrink-0"> <a href="#home" class="text-xl font-bold hover:text-secondary transition-colors">Cloud & IT Expert</a> </div> <!-- Desktop Navigation --> <div class="hidden md:block"> <div class="ml-10 flex items-baseline space-x-4"> <a href="#home" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a> <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a> <a href="#projects" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a> <a href="#blog" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a> <a href="#contact" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a> </div> </div> <!-- Mobile menu button --> <div class="md:hidden"> <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-textLight hover:text-secondary hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-colors"> <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> </div> </div> </div> <!-- Mobile Navigation Menu --> <div id="mobile-menu" class="md:hidden hidden"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary border-t border-secondary/20"> <a href="#home" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Home</a> <a href="#skills" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a> <a href="#projects" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a> <a href="#blog" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Blog</a> <a href="#about" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a> <a href="#contact" class="text-textLight hover:text-secondary block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a> </div> </div> </nav> <script>
+  document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) {
+      menu.classList.toggle('hidden');
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Close mobile menu after clicking
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+        }
+      }
+    });
+  });
+</script> <div class="pt-16" data-astro-cid-sckkx6r4>  <div class="bg-background text-textPrimary min-h-screen"> <div class="container mx-auto px-4 py-20"> <!-- Back Navigation --> <div class="mb-8"> <a href="#blog" class="inline-flex items-center text-secondary hover:text-secondary/80 transition-colors"> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg>
+Back to Blog
+</a> </div> <!-- Blog Post Header --> <div class="mb-12"> <div class="flex items-center gap-4 mb-4"> <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium"> Security </span> <span class="text-textPrimary/60 text-sm"> November 10, 2024 </span> </div> <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-textPrimary"> Serverless Security Practices for Modern Applications </h1> <p class="text-xl text-textPrimary/80 leading-relaxed"> Security in serverless environments requires a different approach. Learn about least privilege principles, secure function design, and monitoring strategies. </p> </div> <!-- Blog Content --> <div class="prose prose-lg prose-invert max-w-none"> <h1 id="serverless-security-practices-for-modern-applications">Serverless Security Practices for Modern Applications</h1>
+<p>Serverless computing has revolutionized application development, but it introduces unique security challenges. Traditional perimeter-based security models don’t translate well to ephemeral, event-driven architectures.</p>
+<h2 id="understanding-serverless-security-challenges">Understanding Serverless Security Challenges</h2>
+<h3 id="ephemeral-nature">Ephemeral Nature</h3>
+<p>Serverless functions exist only during execution:</p>
+<ul>
+<li><strong>No persistent state</strong> to monitor</li>
+<li><strong>Dynamic scaling</strong> complicates access control</li>
+<li><strong>Shared infrastructure</strong> requires careful isolation</li>
+<li><strong>Event-driven triggers</strong> expand attack surface</li>
+</ul>
+<h3 id="expanded-attack-surface">Expanded Attack Surface</h3>
+<ul>
+<li><strong>API Gateway vulnerabilities</strong></li>
+<li><strong>Function cold start exploits</strong></li>
+<li><strong>Third-party service dependencies</strong></li>
+<li><strong>Configuration management risks</strong></li>
+</ul>
+<h2 id="core-security-principles">Core Security Principles</h2>
+<h3 id="1-least-privilege-access">1. Least Privilege Access</h3>
+<p>Implement granular permissions:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "Version"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2012-10-17"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "Statement"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">      "Effect"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Allow"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "Action"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">        "s3:GetObject"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "s3:PutObject"</span></span>
+<span class="line"><span style="color:#E1E4E8">      ],</span></span>
+<span class="line"><span style="color:#79B8FF">      "Resource"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"arn:aws:s3:::my-bucket/*"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "Condition"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "StringEquals"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">          "aws:SourceAccount"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"123456789012"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="2-secure-function-design">2. Secure Function Design</h3>
+<h4 id="input-validation">Input Validation</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> AWS</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'aws-sdk'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> validator</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'validator'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">exports</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">handler</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">  // Validate input</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">event.body </span><span style="color:#F97583">||</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">validator.</span><span style="color:#B392F0">isEmail</span><span style="color:#E1E4E8">(event.body.email)) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">      statusCode: </span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ error: </span><span style="color:#9ECBFF">'Invalid input'</span><span style="color:#E1E4E8"> })</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Sanitize data</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> sanitizedEmail</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> validator.</span><span style="color:#B392F0">normalizeEmail</span><span style="color:#E1E4E8">(event.body.email);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Process securely</span></span>
+<span class="line"><span style="color:#6A737D">  // ... function logic</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<h4 id="environment-variables">Environment Variables</h4>
+<ul>
+<li>Use encrypted environment variables</li>
+<li>Never log sensitive configuration</li>
+<li>Rotate secrets regularly</li>
+</ul>
+<h3 id="3-network-security">3. Network Security</h3>
+<h4 id="vpc-configuration">VPC Configuration</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># CloudFormation VPC config</span></span>
+<span class="line"><span style="color:#85E89D">Resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  LambdaSecurityGroup</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    Type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">AWS::EC2::SecurityGroup</span></span>
+<span class="line"><span style="color:#85E89D">    Properties</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      GroupDescription</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Security group for Lambda functions</span></span>
+<span class="line"><span style="color:#85E89D">      VpcId</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">!Ref</span><span style="color:#9ECBFF"> VPC</span></span>
+<span class="line"><span style="color:#85E89D">      SecurityGroupIngress</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">IpProtocol</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">tcp</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">FromPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">443</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">ToPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">443</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">CidrIp</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">0.0.0.0/0</span></span></code></pre>
+<h4 id="api-gateway-security">API Gateway Security</h4>
+<ul>
+<li>Implement request throttling</li>
+<li>Use AWS WAF for protection</li>
+<li>Enable API logging and monitoring</li>
+</ul>
+<h2 id="monitoring-and-detection">Monitoring and Detection</h2>
+<h3 id="cloudwatch-integration">CloudWatch Integration</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> AWS</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'aws-sdk'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> cloudwatch</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#79B8FF"> AWS</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">CloudWatch</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">exports</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">handler</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">    // Function logic here</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Log security events</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> cloudwatch.</span><span style="color:#B392F0">putMetricData</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">      MetricData: [{</span></span>
+<span class="line"><span style="color:#E1E4E8">        MetricName: </span><span style="color:#9ECBFF">'SecurityEvent'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Value: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Unit: </span><span style="color:#9ECBFF">'Count'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        Timestamp: </span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">      }],</span></span>
+<span class="line"><span style="color:#E1E4E8">      Namespace: </span><span style="color:#9ECBFF">'ServerlessSecurity'</span></span>
+<span class="line"><span style="color:#E1E4E8">    }).</span><span style="color:#B392F0">promise</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#6A737D">    // Log security incidents</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Security incident:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#F97583">    throw</span><span style="color:#E1E4E8"> error;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<h3 id="x-ray-tracing">X-Ray Tracing</h3>
+<p>Enable distributed tracing for security monitoring:</p>
+<ul>
+<li>Track function execution paths</li>
+<li>Identify anomalous behavior</li>
+<li>Monitor third-party service calls</li>
+</ul>
+<h2 id="compliance-and-governance">Compliance and Governance</h2>
+<h3 id="automated-compliance-checks">Automated Compliance Checks</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># AWS Config Rules for serverless</span></span>
+<span class="line"><span style="color:#85E89D">Resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  LambdaEncryptionCheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    Type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">AWS::Config::ConfigRule</span></span>
+<span class="line"><span style="color:#85E89D">    Properties</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      Source</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        Owner</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">AWS</span></span>
+<span class="line"><span style="color:#85E89D">        SourceIdentifier</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">LAMBDA_FUNCTION_PUBLIC_ACCESS_PROHIBITED</span></span></code></pre>
+<h3 id="security-automation">Security Automation</h3>
+<ul>
+<li>Automated vulnerability scanning</li>
+<li>Policy-as-code enforcement</li>
+<li>Continuous compliance monitoring</li>
+</ul>
+<h2 id="incident-response">Incident Response</h2>
+<h3 id="serverless-incident-response-plan">Serverless Incident Response Plan</h3>
+<ol>
+<li><strong>Detection</strong>: Automated alerts from monitoring systems</li>
+<li><strong>Assessment</strong>: Evaluate impact and scope</li>
+<li><strong>Containment</strong>: Disable compromised functions</li>
+<li><strong>Recovery</strong>: Deploy patched versions</li>
+<li><strong>Lessons Learned</strong>: Update security practices</li>
+</ol>
+<h3 id="backup-and-recovery">Backup and Recovery</h3>
+<ul>
+<li>Implement function versioning</li>
+<li>Use AWS Backup for data protection</li>
+<li>Test recovery procedures regularly</li>
+</ul>
+<h2 id="best-practices-summary">Best Practices Summary</h2>
+<h3 id="development-phase">Development Phase</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Use infrastructure as code</li>
+<li class="task-list-item"><input type="checkbox" disabled> Implement automated security testing</li>
+<li class="task-list-item"><input type="checkbox" disabled> Follow least privilege principles</li>
+<li class="task-list-item"><input type="checkbox" disabled> Validate all inputs and outputs</li>
+</ul>
+<h3 id="deployment-phase">Deployment Phase</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Enable encryption at rest and in transit</li>
+<li class="task-list-item"><input type="checkbox" disabled> Configure proper IAM roles</li>
+<li class="task-list-item"><input type="checkbox" disabled> Set up monitoring and alerting</li>
+<li class="task-list-item"><input type="checkbox" disabled> Implement rate limiting</li>
+</ul>
+<h3 id="operations-phase">Operations Phase</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Monitor for security events</li>
+<li class="task-list-item"><input type="checkbox" disabled> Regularly update dependencies</li>
+<li class="task-list-item"><input type="checkbox" disabled> Conduct security audits</li>
+<li class="task-list-item"><input type="checkbox" disabled> Train team on security practices</li>
+</ul>
+<h2 id="tools-and-services">Tools and Services</h2>
+<h3 id="aws-security-services">AWS Security Services</h3>
+<ul>
+<li><strong>AWS WAF</strong>: Web application firewall</li>
+<li><strong>AWS Shield</strong>: DDoS protection</li>
+<li><strong>AWS GuardDuty</strong>: Threat detection</li>
+<li><strong>AWS Config</strong>: Configuration compliance</li>
+</ul>
+<h3 id="third-party-tools">Third-Party Tools</h3>
+<ul>
+<li><strong>Snyk</strong>: Dependency vulnerability scanning</li>
+<li><strong>Checkov</strong>: Infrastructure as code security</li>
+<li><strong>Aqua Security</strong>: Container security</li>
+<li><strong>Datadog</strong>: Security monitoring</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Serverless security requires a shift from traditional perimeter-based approaches to a focus on function-level security, continuous monitoring, and automated enforcement. By implementing these practices, you can build secure, compliant serverless applications that scale with confidence.</p>
+<p>Remember: Security is not a one-time implementation—it’s an ongoing process that requires vigilance, automation, and continuous improvement.</p> </div> <!-- Navigation --> <div class="mt-16 pt-8 border-t border-secondary/20"> <div class="flex justify-between items-center"> <a href="#blog" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+← View All Posts
+</a> <a href="#contact" class="bg-secondary hover:bg-secondary/80 text-primary px-6 py-3 rounded-lg font-heading font-medium transition-colors">
+Discuss This Topic →
+</a> </div> </div> </div> </div>  </div>  </body></html>
