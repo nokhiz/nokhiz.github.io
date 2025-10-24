@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.7"><title>Cloud Expert</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.DS63IW3N.css">
+<style>.line-clamp-2[data-astro-cid-2hwget37]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.line-clamp-3[data-astro-cid-2hwget37]{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+</style></head> <body data-astro-cid-sckkx6r4> <nav class="fixed top-0 left-0 right-0 z-50 bg-primary text-textLight shadow-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <!-- Left side: Brand/Logo and Desktop Navigation --> <div class="flex items-center flex-1"> <!-- Brand/Logo --> <div class="flex-shrink-0"> <a href="/#home" class="text-xl font-bold hover:text-secondary transition-colors">☁️ Cloud Expert</a> </div> <!-- Separator - Only visible on desktop --> <div class="mx-4 h-6 w-px bg-secondary/50 hidden md:block"></div> <!-- Desktop Navigation - Visible on md and up, hidden on mobile --> <div class="hidden md:block"> <div class="flex items-center space-x-4"> <a href="/#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a> <a href="/#projects" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a> <a href="/#blog" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="/#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a> <a href="/#contact" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a> </div> </div> </div> <!-- Mobile menu button - Only visible on mobile --> <div class="md:hidden"> <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-textLight hover:text-secondary hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-colors"> <svg id="menu-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> </div> </div> </div> <!-- Mobile Navigation Menu - Only visible when toggled on mobile --> <div id="mobile-menu" class="hidden md:hidden"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary border-t border-secondary/20"> <a href="/#skills" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a> <a href="/#projects" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a> <a href="/#blog" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Blog</a> <a href="/#about" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a> <a href="/#contact" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a> </div> </div> </nav> <script>
+  document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (menu) {
+      menu.classList.toggle('hidden');
+      
+      // Toggle icons
+      if (menuIcon && closeIcon) {
+        menuIcon.classList.toggle('hidden');
+        menuIcon.classList.toggle('block');
+        closeIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('block');
+      }
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      const target = document.querySelector(href);
+      if (target) {
+        // If on home page, scroll smoothly
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Close mobile menu after clicking
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          
+          // Reset icons to hamburger
+          if (menuIcon && closeIcon) {
+            menuIcon.classList.remove('hidden');
+            menuIcon.classList.add('block');
+            closeIcon.classList.add('hidden');
+            closeIcon.classList.remove('block');
+          }
+        }
+      } else {
+        // If not on home page, navigate to home page with anchor
+        window.location.href = '/' + href;
+      }
+    });
+  });
+</script> <div class="pt-16" data-astro-cid-sckkx6r4>  <title>Projects - Cloud Infrastructure Solutions | Nokhiz.dev</title> <meta name="description" content="Explore comprehensive cloud infrastructure projects, DevOps implementations, and IT architecture solutions. Discover case studies on multi-cloud environments, automation, and security."> <meta name="keywords" content="cloud infrastructure, DevOps, multi-cloud, automation, security, IT architecture, projects"> <meta name="author" content="Nokhiz"> <meta property="og:title" content="Projects - Cloud Infrastructure Solutions | Nokhiz.dev"> <meta property="og:description" content="Explore comprehensive cloud infrastructure projects and DevOps implementations from a seasoned cloud expert."> <meta property="og:type" content="website"> <meta property="og:url" content="https://nokhiz.dev/projects"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Projects - Cloud Infrastructure Solutions | Nokhiz.dev"> <meta name="twitter:description" content="Explore comprehensive cloud infrastructure projects and DevOps implementations from a seasoned cloud expert."> <link rel="canonical" href="https://nokhiz.dev/projects"> <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Cloud Infrastructure Projects",
+          "description": "Comprehensive cloud infrastructure projects and DevOps implementations",
+          "url":"https://nokhiz.dev/projects",
+          "author": {
+            "@type": "Person",
+            "name": "Nokhiz",
+            "jobTitle": "Cloud Expert",
+            "url": "https://nokhiz.dev"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": "{projects.length}",
+            "itemListElement": [
+              {projects.map((project, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": project.data.title,
+                  "description": project.data.description,
+                  "dateCreated": project.data.date.toISOString(),
+                  "url": `https://nokhiz.dev/projects/${project.slug}`,
+                  "author": {
+                    "@type": "Person",
+                    "name": "Nokhiz"
+                  }
+                }
+              }))}
+            ]
+          }
+        }
+      </script>  </div>  </body></html> <div class="bg-background text-textPrimary min-h-screen" data-astro-cid-2hwget37> <div class="container mx-auto px-4 py-20" data-astro-cid-2hwget37> <!-- Header --> <div class="text-center mb-16" data-astro-cid-2hwget37> <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-textPrimary" data-astro-cid-2hwget37>
+🏗️ Projects & Case Studies
+</h1> <p class="text-lg md:text-xl font-body text-textSecondary max-w-3xl mx-auto leading-relaxed" data-astro-cid-2hwget37>
+Explore all my cloud infrastructure projects, DevOps implementations, and IT architecture solutions. Use the search bar to find details you need.
+</p> </div> <!-- Search --> <div class="mb-12" data-astro-cid-2hwget37> <div class="flex justify-center" data-astro-cid-2hwget37> <div class="relative w-full max-w-md" data-astro-cid-2hwget37> <input type="text" id="search-input" placeholder="Search projects..." class="w-full bg-surface border border-border text-textPrimary px-4 py-3 pl-12 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary" data-astro-cid-2hwget37> <svg class="absolute left-3 top-3.5 w-5 h-5 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" data-astro-cid-2hwget37></path> </svg> </div> </div> </div> <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-astro-cid-2hwget37> <article class="project-card bg-surface rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border" data-astro-cid-2hwget37> <div class="p-6" data-astro-cid-2hwget37> <div class="flex items-center justify-between mb-3" data-astro-cid-2hwget37> <div class="flex flex-wrap gap-1" data-astro-cid-2hwget37> <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>cloud</span><span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>devops</span> </div> <span class="text-textSecondary text-sm" data-astro-cid-2hwget37>📅 Dec 1, 2024</span> </div> <div class="flex items-center mb-3" data-astro-cid-2hwget37> <img src="/src/assets/clients-brands/kuka-logo.svg" alt="kuka logo" class="w-12 h-12 mr-3" data-astro-cid-2hwget37> <h2 class="text-xl font-heading font-semibold text-textPrimary line-clamp-2" data-astro-cid-2hwget37> <a href="/projects/multi-cloud-infrastructure" class="hover:text-secondary transition-colors" data-astro-cid-2hwget37>Multi-Cloud Infrastructure Migration</a> </h2> </div> <p class="text-textSecondary mb-4 leading-relaxed line-clamp-3" data-astro-cid-2hwget37>Led the migration of legacy infrastructure to a multi-cloud environment, reducing costs by 40% and improving scalability.</p> <div class="flex flex-wrap gap-2 mb-4" data-astro-cid-2hwget37> <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>AWS</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Terraform</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Kubernetes</span>  </div> <div class="flex justify-between items-center" data-astro-cid-2hwget37> <span class="text-highlight font-semibold text-sm" data-astro-cid-2hwget37>40% Cost Reduction</span> <a href="/projects/multi-cloud-infrastructure" class="inline-flex items-center text-secondary hover:text-secondary/80 font-heading font-medium transition-colors" data-astro-cid-2hwget37>
+Case Study
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-2hwget37></path> </svg> </a> </div> </div> </article><article class="project-card bg-surface rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border" data-astro-cid-2hwget37> <div class="p-6" data-astro-cid-2hwget37> <div class="flex items-center justify-between mb-3" data-astro-cid-2hwget37> <div class="flex flex-wrap gap-1" data-astro-cid-2hwget37> <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>devops</span><span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>security</span> </div> <span class="text-textSecondary text-sm" data-astro-cid-2hwget37>📅 Nov 15, 2024</span> </div> <div class="flex items-center mb-3" data-astro-cid-2hwget37> <img src="/src/assets/clients-brands/hays-logo.svg" alt="hays logo" class="w-12 h-12 mr-3" data-astro-cid-2hwget37> <h2 class="text-xl font-heading font-semibold text-textPrimary line-clamp-2" data-astro-cid-2hwget37> <a href="/projects/ci-cd-security-enhancement" class="hover:text-secondary transition-colors" data-astro-cid-2hwget37>CI/CD Pipeline Security Enhancement</a> </h2> </div> <p class="text-textSecondary mb-4 leading-relaxed line-clamp-3" data-astro-cid-2hwget37>Implemented secure CI/CD pipelines with automated security scanning, reducing deployment vulnerabilities by 60%.</p> <div class="flex flex-wrap gap-2 mb-4" data-astro-cid-2hwget37> <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Jenkins</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Docker</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>SonarQube</span>  </div> <div class="flex justify-between items-center" data-astro-cid-2hwget37> <span class="text-highlight font-semibold text-sm" data-astro-cid-2hwget37>60% Fewer Vulnerabilities</span> <a href="/projects/ci-cd-security-enhancement" class="inline-flex items-center text-secondary hover:text-secondary/80 font-heading font-medium transition-colors" data-astro-cid-2hwget37>
+Case Study
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-2hwget37></path> </svg> </a> </div> </div> </article><article class="project-card bg-surface rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border" data-astro-cid-2hwget37> <div class="p-6" data-astro-cid-2hwget37> <div class="flex items-center justify-between mb-3" data-astro-cid-2hwget37> <div class="flex flex-wrap gap-1" data-astro-cid-2hwget37> <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>cloud</span><span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>ai</span> </div> <span class="text-textSecondary text-sm" data-astro-cid-2hwget37>📅 Oct 20, 2024</span> </div> <div class="flex items-center mb-3" data-astro-cid-2hwget37> <img src="/src/assets/clients-brands/bmw-logo.svg" alt="bmw logo" class="w-12 h-12 mr-3" data-astro-cid-2hwget37> <h2 class="text-xl font-heading font-semibold text-textPrimary line-clamp-2" data-astro-cid-2hwget37> <a href="/projects/ai-powered-monitoring" class="hover:text-secondary transition-colors" data-astro-cid-2hwget37>AI-Powered Monitoring System</a> </h2> </div> <p class="text-textSecondary mb-4 leading-relaxed line-clamp-3" data-astro-cid-2hwget37>Developed an intelligent monitoring system using ML algorithms to predict and prevent system failures before they occur.</p> <div class="flex flex-wrap gap-2 mb-4" data-astro-cid-2hwget37> <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Python</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Prometheus</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>TensorFlow</span>  </div> <div class="flex justify-between items-center" data-astro-cid-2hwget37> <span class="text-highlight font-semibold text-sm" data-astro-cid-2hwget37>99.9% Uptime</span> <a href="/projects/ai-powered-monitoring" class="inline-flex items-center text-secondary hover:text-secondary/80 font-heading font-medium transition-colors" data-astro-cid-2hwget37>
+Case Study
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-2hwget37></path> </svg> </a> </div> </div> </article><article class="project-card bg-surface rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border" data-astro-cid-2hwget37> <div class="p-6" data-astro-cid-2hwget37> <div class="flex items-center justify-between mb-3" data-astro-cid-2hwget37> <div class="flex flex-wrap gap-1" data-astro-cid-2hwget37> <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>cloud</span><span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>devops</span> </div> <span class="text-textSecondary text-sm" data-astro-cid-2hwget37>📅 Sep 10, 2024</span> </div> <div class="flex items-center mb-3" data-astro-cid-2hwget37> <img src="/src/assets/clients-brands/ntt-data-logo.svg" alt="ntt-data logo" class="w-12 h-12 mr-3" data-astro-cid-2hwget37> <h2 class="text-xl font-heading font-semibold text-textPrimary line-clamp-2" data-astro-cid-2hwget37> <a href="/projects/serverless-application-architecture" class="hover:text-secondary transition-colors" data-astro-cid-2hwget37>Serverless Application Architecture</a> </h2> </div> <p class="text-textSecondary mb-4 leading-relaxed line-clamp-3" data-astro-cid-2hwget37>Designed and implemented a serverless architecture that auto-scales and reduced operational costs by 50%.</p> <div class="flex flex-wrap gap-2 mb-4" data-astro-cid-2hwget37> <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>AWS Lambda</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>API Gateway</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>DynamoDB</span>  </div> <div class="flex justify-between items-center" data-astro-cid-2hwget37> <span class="text-highlight font-semibold text-sm" data-astro-cid-2hwget37>50% Cost Savings</span> <a href="/projects/serverless-application-architecture" class="inline-flex items-center text-secondary hover:text-secondary/80 font-heading font-medium transition-colors" data-astro-cid-2hwget37>
+Case Study
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-2hwget37></path> </svg> </a> </div> </div> </article><article class="project-card bg-surface rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border" data-astro-cid-2hwget37> <div class="p-6" data-astro-cid-2hwget37> <div class="flex items-center justify-between mb-3" data-astro-cid-2hwget37> <div class="flex flex-wrap gap-1" data-astro-cid-2hwget37> <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>security</span><span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>cloud</span> </div> <span class="text-textSecondary text-sm" data-astro-cid-2hwget37>📅 Aug 5, 2024</span> </div> <div class="flex items-center mb-3" data-astro-cid-2hwget37> <img src="/src/assets/clients-brands/zeiss-logo.svg" alt="zeiss logo" class="w-12 h-12 mr-3" data-astro-cid-2hwget37> <h2 class="text-xl font-heading font-semibold text-textPrimary line-clamp-2" data-astro-cid-2hwget37> <a href="/projects/zero-trust-network-implementation" class="hover:text-secondary transition-colors" data-astro-cid-2hwget37>Zero-Trust Network Implementation</a> </h2> </div> <p class="text-textSecondary mb-4 leading-relaxed line-clamp-3" data-astro-cid-2hwget37>Implemented a comprehensive zero-trust security model across hybrid cloud environments, enhancing data protection.</p> <div class="flex flex-wrap gap-2 mb-4" data-astro-cid-2hwget37> <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Azure AD</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>VPN</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>IAM</span>  </div> <div class="flex justify-between items-center" data-astro-cid-2hwget37> <span class="text-highlight font-semibold text-sm" data-astro-cid-2hwget37>Zero Security Breaches</span> <a href="/projects/zero-trust-network-implementation" class="inline-flex items-center text-secondary hover:text-secondary/80 font-heading font-medium transition-colors" data-astro-cid-2hwget37>
+Case Study
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-2hwget37></path> </svg> </a> </div> </div> </article><article class="project-card bg-surface rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-border" data-astro-cid-2hwget37> <div class="p-6" data-astro-cid-2hwget37> <div class="flex items-center justify-between mb-3" data-astro-cid-2hwget37> <div class="flex flex-wrap gap-1" data-astro-cid-2hwget37> <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>devops</span><span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-medium" data-astro-cid-2hwget37>ai</span> </div> <span class="text-textSecondary text-sm" data-astro-cid-2hwget37>📅 Jul 15, 2024</span> </div> <div class="flex items-center mb-3" data-astro-cid-2hwget37> <img src="/src/assets/clients-brands/epam-logo.svg" alt="epam logo" class="w-12 h-12 mr-3" data-astro-cid-2hwget37> <h2 class="text-xl font-heading font-semibold text-textPrimary line-clamp-2" data-astro-cid-2hwget37> <a href="/projects/automated-infrastructure-as-code" class="hover:text-secondary transition-colors" data-astro-cid-2hwget37>Automated Infrastructure as Code</a> </h2> </div> <p class="text-textSecondary mb-4 leading-relaxed line-clamp-3" data-astro-cid-2hwget37>Created an AI-assisted IaC framework that generates infrastructure code, reducing deployment time by 70%.</p> <div class="flex flex-wrap gap-2 mb-4" data-astro-cid-2hwget37> <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Terraform</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>GitHub Actions</span><span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm" data-astro-cid-2hwget37>Python</span>  </div> <div class="flex justify-between items-center" data-astro-cid-2hwget37> <span class="text-highlight font-semibold text-sm" data-astro-cid-2hwget37>70% Faster Deployments</span> <a href="/projects/automated-infrastructure-as-code" class="inline-flex items-center text-secondary hover:text-secondary/80 font-heading font-medium transition-colors" data-astro-cid-2hwget37>
+Case Study
+<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-2hwget37></path> </svg> </a> </div> </div> </article> </div> <!-- Back to Home --> <div class="text-center mt-16" data-astro-cid-2hwget37> <a href="/#projects" class="bg-secondary hover:bg-secondary/80 text-background px-8 py-4 rounded-lg font-heading font-semibold text-lg transition-colors inline-flex items-center" data-astro-cid-2hwget37> <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-2hwget37> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" data-astro-cid-2hwget37></path> </svg>
+Back to Home
+</a> </div> </div> </div>  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search-input');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    function searchProjects() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+
+      projectCards.forEach(card => {
+        const title = card.querySelector('h2 a').textContent.toLowerCase();
+        const description = card.querySelector('.text-textSecondary.mb-4').textContent.toLowerCase();
+        const categories = Array.from(card.querySelectorAll('.bg-secondary\\/10')).map(span => span.textContent.trim().toLowerCase());
+        const techStack = Array.from(card.querySelectorAll('.bg-primary\\/10')).map(span => span.textContent.trim().toLowerCase());
+        const company = card.querySelector('img')?.alt?.replace(' logo', '').toLowerCase() || '';
+
+        const searchableContent = [
+          title,
+          description,
+          ...categories,
+          ...techStack,
+          company
+        ].join(' ');
+
+        if (searchTerm === '' || searchableContent.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Add event listener for search input
+    searchInput.addEventListener('input', searchProjects);
+
+    // Initial search (show all)
+    searchProjects();
+  });
+</script>
