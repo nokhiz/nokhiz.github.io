@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.7"><title>Cloud Expert</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.BIOtAv7F.css">
+<link rel="stylesheet" href="/_astro/_slug_.SwDJq0M5.css"></head> <body data-astro-cid-sckkx6r4> <nav class="fixed top-0 left-0 right-0 z-50 bg-primary text-textLight shadow-md"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <div class="flex items-center justify-between h-16"> <!-- Left side: Brand/Logo and Desktop Navigation --> <div class="flex items-center flex-1"> <!-- Brand/Logo --> <div class="flex-shrink-0"> <a href="/#home" class="text-xl font-bold hover:text-secondary transition-colors">Cloud Expert</a> </div> <!-- Separator - Only visible on desktop --> <div class="mx-4 h-6 w-px bg-secondary/50 hidden md:block"></div> <!-- Desktop Navigation - Visible on md and up, hidden on mobile --> <div class="hidden md:block"> <div class="flex items-center space-x-4"> <a href="/#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a> <a href="/#projects" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a> <a href="/#blog" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="/#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a> <a href="/#contact" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a> </div> </div> </div> <!-- Mobile menu button - Only visible on mobile --> <div class="md:hidden"> <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-textLight hover:text-secondary hover:bg-secondary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary transition-colors"> <svg id="menu-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> </svg> </button> </div> </div> </div> <!-- Mobile Navigation Menu - Only visible when toggled on mobile --> <div id="mobile-menu" class="hidden md:hidden"> <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-primary border-t border-secondary/20"> <a href="/#skills" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a> <a href="/#projects" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a> <a href="/#blog" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Blog</a> <a href="/#about" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a> <a href="/#contact" class="text-textLight hover:text-secondary hover:bg-secondary/10 block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a> </div> </div> </nav> <script>
+  document.getElementById('mobile-menu-button')?.addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (menu) {
+      menu.classList.toggle('hidden');
+      
+      // Toggle icons
+      if (menuIcon && closeIcon) {
+        menuIcon.classList.toggle('hidden');
+        menuIcon.classList.toggle('block');
+        closeIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('block');
+      }
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      const target = document.querySelector(href);
+      if (target) {
+        // If on home page, scroll smoothly
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        // Close mobile menu after clicking
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        if (menu && !menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+          
+          // Reset icons to hamburger
+          if (menuIcon && closeIcon) {
+            menuIcon.classList.remove('hidden');
+            menuIcon.classList.add('block');
+            closeIcon.classList.add('hidden');
+            closeIcon.classList.remove('block');
+          }
+        }
+      } else {
+        // If not on home page, navigate to home page with anchor
+        window.location.href = '/' + href;
+      }
+    });
+  });
+</script> <div class="pt-16" data-astro-cid-sckkx6r4>  <div class="bg-background text-textPrimary min-h-screen"> <!-- Hero Section --> <div class="relative bg-primary text-textLight py-10 overflow-hidden"> <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 via-primary to-accent/10 opacity-20"></div> <div class="absolute inset-0 bg-grid-pattern opacity-5"></div> <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8"> <div class="max-w-6xl"> <!-- Breadcrumbs --> <nav class="mb-8" aria-label="Breadcrumb"> <div class="flex items-center space-x-2 text-textLight/80 list-none"> <p><a href="/" class="hover:text-secondary transition-colors">Home</a></p> <p><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></p> <p><a href="/projects" class="hover:text-secondary transition-colors">Projects</a></p> <p><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></p> <p class="text-textLight font-medium"><b>ZEISS MLOps Inference MediTech Platform on Azure</b></p> </div> </nav> <!-- Logo and Navigation --> <div class="flex flex-col sm:flex-row items-start sm:items-center mb-8"> <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity mb-4 sm:mb-0 sm:mr-6"> <img src="/_astro/zeiss-logo._GutzIYU.svg" alt="zeiss logo" class="h-8 w-auto bg-white p-1 rounded opacity-80 hover:opacity-100 transition-opacity"> </a> <!-- Title --> <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight max-w-4xl"> ZEISS MLOps Inference MediTech Platform on Azure </h1> </div> <!-- Subtitle --> <p class="text-xl md:text-2xl text-textLight/90 mb-8 leading-relaxed max-w-3xl"> Designed and developed a secure, compliant, and scalable MLOps inference platform on Microsoft Azure to enable AI-powered decision support and intelligent medical applications at ZEISS Meditec. </p> <!-- Meta Information --> <div class="flex flex-wrap items-center gap-8 text-textLight/80 mb-8"> <div class="flex items-center gap-2 bg-secondary/40 rounded-lg px-3 py-2 border border-secondary/60"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path> </svg> <span class="font-bold text-white">1. August 2023</span> </div> <div class="flex items-center gap-2 bg-secondary/40 rounded-lg px-3 py-2 border border-secondary/60"> <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path> </svg> <span class="font-bold text-white font-semibold text-secondary">Delivered a compliant, cloud-native MLOps platform for regulated medical AI workflows</span> </div> </div> <!-- Tags --> <div class="flex flex-wrap gap-2 mb-6"> <span class="bg-secondary/20 text-textLight px-3 py-1 rounded-full text-sm font-medium border border-secondary/30 backdrop-blur-sm">
+#cloud </span><span class="bg-secondary/20 text-textLight px-3 py-1 rounded-full text-sm font-medium border border-secondary/30 backdrop-blur-sm">
+#mlops </span><span class="bg-secondary/20 text-textLight px-3 py-1 rounded-full text-sm font-medium border border-secondary/30 backdrop-blur-sm">
+#ai </span><span class="bg-secondary/20 text-textLight px-3 py-1 rounded-full text-sm font-medium border border-secondary/30 backdrop-blur-sm">
+#azure </span> </div> </div> </div> </div> <!-- Content Section --> <main class="container mx-auto py-8"> <div class="max-w-4xl mx-auto"> <!-- Tech Stack Section --> <section class="mb-16"> <h2 class="text-3xl font-heading font-bold mb-8 text-textPrimary">Technologies Used</h2> <div class="flex flex-wrap gap-4" role="list" aria-label="Technologien verwendet"> <div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: Azure"> <span class="text-sm font-medium">Azure</span> </div><div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: Kubernetes"> <span class="text-sm font-medium">Kubernetes</span> </div><div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: Python"> <span class="text-sm font-medium">Python</span> </div><div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: Terraform"> <span class="text-sm font-medium">Terraform</span> </div><div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: Helm"> <span class="text-sm font-medium">Helm</span> </div><div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: Azure DevOps"> <span class="text-sm font-medium">Azure DevOps</span> </div><div class="bg-gray-100 text-gray-600 rounded-lg px-3 py-2 text-center inline-block" role="listitem" aria-label="Technologie: DAPR"> <span class="text-sm font-medium">DAPR</span> </div> </div> </section> <!-- Project Content --> <article> <h1 id="zeiss-mlops-inference-meditech-platform-on-azure">ZEISS MLOps Inference MediTech Platform on Azure</h1>
+<h2 id="overview">Overview</h2>
+<p>At <strong>ZEISS Meditec AG</strong>, within the <strong>AI Medical Technology R&#x26;D department</strong>, I contributed to the <strong>design and development of an MLOps inference platform</strong> on <strong>Microsoft Azure</strong>.<br>
+The platform was built around a <strong>central data layer</strong> for structured medical device data, enabling <strong>AI-driven decision support systems</strong> and <strong>intelligent medical applications</strong>.</p>
+<p>The project’s mission was to establish a <strong>secure, compliant, and scalable cloud-native platform</strong> for AI in regulated medical environments — ensuring full alignment with <strong>ISO 13485</strong>, <strong>IEC 62304</strong>, and ZEISS enterprise strategy.</p>
+<hr>
+<h2 id="role--responsibilities">Role &#x26; Responsibilities</h2>
+<p>As <strong>Senior Cloud and MLOps Engineer</strong>, I designed, implemented, and guided the technical development of the Azure-based MLOps platform.</p>
+<ul>
+<li>Facilitated daily <strong>SAFe / Scrum ceremonies</strong> for project and delivery alignment</li>
+<li>Authored <strong>medical regulatory documentation</strong> compliant with <strong>ISO 13485</strong> and <strong>IEC 62304</strong></li>
+<li>Defined and implemented <strong>Azure cloud strategies</strong> for regulated environments</li>
+<li>Designed <strong>secure, compliant cloud-native architectures</strong> following Azure best practices</li>
+<li>Moderated <strong>architecture and requirements workshops</strong> with business and technical stakeholders</li>
+<li>Coordinated cross-functional <strong>collaboration with partners and internal experts</strong></li>
+<li>Conducted <strong>architecture reviews</strong> ensuring quality, compliance, and continuous improvement</li>
+<li>Defined and delivered <strong>MLOps features, epics, and user stories</strong> for product backlogs</li>
+</ul>
+<hr>
+<h2 id="applied-methods--tools">Applied Methods &#x26; Tools</h2>
+<ul>
+<li><strong>Project Methodology:</strong> V-Model combined with Agile Scrum for hybrid delivery</li>
+<li><strong>Regulatory Compliance:</strong> Documentation aligned with ISO 13485 / IEC 62304 standards</li>
+<li><strong>Architecture Workshops:</strong> Captured business, data, and system requirements</li>
+<li><strong>MLOps Lifecycle Management:</strong> Implemented scalable and secure AI workloads</li>
+<li><strong>DevOps &#x26; IaC:</strong> Automated provisioning and deployments for reproducible environments</li>
+<li><strong>Continuous Improvement:</strong> Regular architecture reviews and technical refinements</li>
+</ul>
+<hr>
+<h2 id="applied-technologies">Applied Technologies</h2>
+<ul>
+<li><strong>Azure Cloud Services:</strong> AKS (Azure Kubernetes Service), Event Hub, Service Bus, Synapse, Storage Gen2</li>
+<li><strong>Kubernetes &#x26; Microservices:</strong> Python-based services using Helm charts and <strong>DAPR</strong> framework</li>
+<li><strong>Machine Learning Models:</strong>
+<ul>
+<li><em>U-Net segmentation</em> and <em>anomaly detection</em> for medical image analysis</li>
+<li><em>Classification models</em> for automated diagnostics in clinical workflows</li>
+</ul>
+</li>
+<li><strong>CI/CD &#x26; DevOps:</strong> Azure DevOps Boards, Pipelines, and Repositories for full automation</li>
+<li><strong>Infrastructure as Code (IaC):</strong> Terraform modules and Kubernetes YAML manifests</li>
+<li><strong>Security &#x26; Compliance:</strong> Role-based access, encrypted storage, and policy enforcement</li>
+</ul>
+<hr>
+<h2 id="impact">Impact</h2>
+<ul>
+<li>Delivered a <strong>fully compliant MLOps platform</strong> supporting AI model inference for medical devices</li>
+<li>Improved <strong>traceability and reproducibility</strong> in AI workflows through IaC and DevOps automation</li>
+<li>Enabled <strong>cross-functional collaboration</strong> between data scientists, engineers, and medical experts</li>
+<li>Established a <strong>secure, cloud-native foundation</strong> for scalable AI-enabled medical solutions</li>
+<li>Accelerated innovation in <strong>AI-powered diagnostics and decision support systems</strong></li>
+</ul>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>The <strong>ZEISS MLOps Inference MediTech Platform</strong> showcases the integration of <strong>MLOps best practices</strong>, <strong>Azure cloud architecture</strong>, and <strong>medical regulatory compliance</strong> into one unified platform.<br>
+Through secure infrastructure design, automation, and cross-disciplinary collaboration, this project advanced ZEISS’s mission to bring <strong>intelligent, data-driven healthcare innovations</strong> to market safely and efficiently.</p> </article> <!-- Project Actions --> <section class="mt-16 pt-8 border-t border-border"> <div class="flex flex-col sm:flex-row gap-4 justify-between items-center"> <a href="/projects" class="inline-flex items-center gap-2 bg-surface hover:bg-surface/80 border border-border text-textPrimary px-6 py-3 rounded-lg font-heading font-medium transition-all hover:border-secondary/50 hover:scale-105" aria-label="Zurück zu allen Projekten"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg>
+All Projects
+</a> <div class="flex gap-4"> <a href="/#contact" class="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-background px-6 py-3 rounded-lg font-heading font-medium transition-all hover:scale-105 shadow-md" aria-label="Dieses Projekt besprechen"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path> </svg>
+Discuss This Project
+</a> </div> </div> </section> </div> </main> </div>  </div>  </body></html>
