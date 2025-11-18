@@ -109,10 +109,15 @@ function windowResized() {
 function getLetterForCoordinate(x, y) {
 	// Simple hash function for x, y coordinates.
 	let hash = (x + y) * sin(x * y);
-	// Ensure a positive value and limit to 26 letters.
-	let index = abs(int(hash * 1000)) % 26;
-	// Convert to uppercase letter using ASCII character code.
-	return String.fromCharCode(65 + index);
+	// Ensure a positive value and limit to 36 characters (26 letters + 10 digits)
+	let index = abs(int(hash * 1000)) % 36;
+	
+	// Return digits 0-9 for indices 0-9, letters A-Z for indices 10-35
+	if (index < 10) {
+		return String.fromCharCode(48 + index); // 48 is ASCII for '0'
+	} else {
+		return String.fromCharCode(65 + index - 10); // 65 is ASCII for 'A'
+	}
 }
 </script>  <section id="skills" class="bg-white text-textPrimary py-20"> <div class="container mx-auto px-4"> <div class="text-center mb-16"> <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-textPrimary">
 🛠️ Skills & Technical Toolbox
