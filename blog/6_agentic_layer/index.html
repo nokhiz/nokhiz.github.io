@@ -79,21 +79,21 @@
 <h3 id="1-layer-️-the-ui-layer">1. Layer 🖥️ The UI Layer</h3>
 <p><strong>The UI Layer</strong> is where humans interact with software. Buttons, forms, dashboards, mobile screens. Its job is twofold: translate human intent into machine-readable actions, and render machine output back into something a human can understand.</p>
 <blockquote>
-<p>🎯 <strong>Kernfunktion:</strong> Bridge between human cognition and machine execution — translating intent in both directions.</p>
+<p>🎯 <strong>Core Function:</strong> Bridge between human cognition and machine execution — translating intent in both directions.</p>
 </blockquote>
 <p>It has always been the most volatile layer — the one that changes with every design trend, every new device, every shift in user expectation. And yet its fundamental role never changed: <em>humans drive it</em>.</p>
 <hr>
 <h3 id="2-layer-️-the-application-layer">2. Layer ⚙️ The Application Layer</h3>
 <p><strong>The Application Layer</strong> is where logic lives. Business rules, workflows, orchestration. This is the layer that knows what a “checkout” means, what constitutes a valid invoice, or when to trigger a refund.</p>
 <blockquote>
-<p>🎯 <strong>Kernfunktion:</strong> Execute deterministic logic in response to instructions — it knows <em>how</em>, but never decides <em>what</em>.</p>
+<p>🎯 <strong>Core Function:</strong> Execute deterministic logic in response to instructions — it knows <em>how</em>, but never decides <em>what</em>.</p>
 </blockquote>
 <p>It is the layer developers spend most of their time in, and it carries most of the complexity that makes software hard to change. Crucially, it is <em>reactive</em> — it waits to be called.</p>
 <hr>
 <h3 id="3-layer-️-the-data-layer">3. Layer 🗄️ The Data Layer</h3>
 <p><strong>The Data Layer</strong> is where state persists. Databases, caches, object stores, event streams. Its job is to remember things reliably — to outlast any individual request, session, or deployment.</p>
 <blockquote>
-<p>🎯 <strong>Kernfunktion:</strong> Durable, reliable persistence of state — the memory of the system across time.</p>
+<p>🎯 <strong>Core Function:</strong> Durable, reliable persistence of state — the memory of the system across time.</p>
 </blockquote>
 <p>It is the most durable layer, the one that future archaeologists of a codebase will dig into last. It holds truth, but has no opinion about it.</p>
 <hr>
@@ -117,27 +117,27 @@
 <hr>
 <h2 id="2-the-hidden-assumption">2. The Hidden Assumption 🔍</h2>
 <blockquote>
-<p>💡 <strong>Kernbotschaft:</strong> Every layer in the classic stack was designed under one silent premise — a human is always present, always deciding, always the source of intent.</p>
+<p>💡 <strong>Key Message:</strong> Every layer in the classic stack was designed under one silent premise — a human is always present, always deciding, always the source of intent.</p>
 </blockquote>
 <p>The three-layer model is not just a diagram. It encodes a philosophy: separate concerns by the kind of work being done, let each layer be optimized and replaced independently.</p>
 <p>But buried inside that philosophy is an assumption that was so obvious it was never stated:</p>
 <p><strong>Agency belongs only to humans.</strong></p>
 <p>Software, in the classic stack, does not have goals. It has instructions. The Application Layer executes logic, but it does not decide what to do next based on context. It does not notice something is going wrong and adjust course. It does not hold a plan in memory across twenty tool calls and revise it when circumstances change.</p>
 <blockquote>
-<p>📌 <strong>Beispiel:</strong> A checkout workflow executes reliably — but if the payment gateway is down, it fails and waits. It does not think: <em>“try an alternative, notify the user, retry in 30 seconds, escalate after two failures.”</em> That reasoning has always lived in a human’s head, not in the software.</p>
+<p>📌 <strong>Example:</strong> A checkout workflow executes reliably — but if the payment gateway is down, it fails and waits. It does not think: <em>“try an alternative, notify the user, retry in 30 seconds, escalate after two failures.”</em> That reasoning has always lived in a human’s head, not in the software.</p>
 </blockquote>
 <p>This is the gap the <strong>Agentic Layer</strong> fills.</p>
 <hr>
 <h2 id="3-the-agentic-layer">3. The Agentic Layer 🤖</h2>
 <blockquote>
-<p>💡 <strong>Kernbotschaft:</strong> The Agentic Layer is not a feature — it is a new architectural primitive. Software that can <em>pursue goals</em> across steps, time, and uncertainty.</p>
+<p>💡 <strong>Key Message:</strong> The Agentic Layer is not a feature — it is a new architectural primitive. Software that can <em>pursue goals</em> across steps, time, and uncertainty.</p>
 </blockquote>
 <p>An <strong>Agentic Layer</strong> is a layer of software that can reason about goals, decompose them into steps, execute those steps using tools, observe the results, and iterate — without a human driving every decision.</p>
 <p>It is not a chatbot wrapper. It is not a prompt template calling an API. It is something structurally different from anything the classic stack contains.</p>
 <h3 id="4-component-️-tools">4. Component 🛠️ Tools</h3>
 <p>Agents need <strong>tools</strong> — ways to read and write data, call APIs, trigger workflows. These tools are, in most cases, interfaces into the Application and Data layers.</p>
 <blockquote>
-<p>🎯 <strong>Kernfunktion:</strong> Tools are the Agentic Layer’s hands — the way it reaches into existing systems to take action.</p>
+<p>🎯 <strong>Core Function:</strong> Tools are the Agentic Layer’s hands — the way it reaches into existing systems to take action.</p>
 </blockquote>
 <p>The Agentic Layer does not replace those layers. It consumes them. This means existing APIs, microservices, and databases become <em>agent-callable primitives</em> — which has real implications for how they need to be designed.</p>
 <hr>
@@ -175,7 +175,7 @@
 
 <table><thead><tr><th>Memory Type</th><th>Where it Lives</th><th>Duration</th></tr></thead><tbody><tr><td><strong>Working memory</strong></td><td>Agent context window</td><td>Single task</td></tr><tr><td><strong>Episodic memory</strong></td><td>Vector store / DB</td><td>Session or longer</td></tr><tr><td><strong>Semantic memory</strong></td><td>Knowledge base</td><td>Persistent</td></tr><tr><td><strong>Procedural memory</strong></td><td>Tool definitions / prompts</td><td>Deployment lifetime</td></tr></tbody></table>
 <blockquote>
-<p>📌 <strong>Beispiel:</strong> A human project manager remembers that a client prefers PDF reports over dashboards. An agent with long-term memory can do the same — without being told every time.</p>
+<p>📌 <strong>Example:</strong> A human project manager remembers that a client prefers PDF reports over dashboards. An agent with long-term memory can do the same — without being told every time.</p>
 </blockquote>
 <hr>
 <h3 id="6-component--goal-interpretation">6. Component 🎯 Goal Interpretation</h3>
