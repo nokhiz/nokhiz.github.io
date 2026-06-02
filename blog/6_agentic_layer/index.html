@@ -134,14 +134,14 @@
 <p>This is where the Agentic Layer becomes philosophically distinct from everything beneath it.</p>
 <p><strong>Goals do not come from a config file.</strong> They come from humans, expressed in natural language, interpreted with judgment. The Agentic Layer is the first layer in software history that must <em>interpret intent</em>, not just execute it.</p>
 <blockquote>
-<p>✏️ <strong>Merkregel:</strong> Every layer below <em>executes instructions</em>. The Agentic Layer <em>interprets goals</em>. That is not a minor upgrade — it is a categorical shift.</p>
+<p>✏️ <strong>Key Rule:</strong> Every layer below <em>executes instructions</em>. The Agentic Layer <em>interprets goals</em>. That is not a minor upgrade — it is a categorical shift.</p>
 </blockquote>
 <p>This introduces a new class of problem: <strong>ambiguity</strong>. When a user says <em>“clean up the project folder,”</em> a traditional system needs a precise specification. An agent must make reasonable inferences — and be transparent about the assumptions it made.</p>
 <hr>
 <h3 id="7-component--trust-boundaries">7. Component 🔐 Trust Boundaries</h3>
 <p>When an agent can take actions autonomously, the question <em>“what is this software allowed to do?”</em> becomes dramatically more important.</p>
 <blockquote>
-<p>💡 <strong>Einsicht:</strong> The Agentic Layer introduces a new class of authorization problem that the Application Layer was never designed to handle — not <em>can this user do X</em>, but <em>should this agent do X right now, in this context, without confirmation?</em></p>
+<p>💡 <strong>Insight:</strong> The Agentic Layer introduces a new class of authorization problem that the Application Layer was never designed to handle — not <em>can this user do X</em>, but <em>should this agent do X right now, in this context, without confirmation?</em></p>
 </blockquote>
 <p>The classic permission model is binary: authenticated or not, authorized or not. Agent authorization needs to be contextual, reversible, and auditable — a problem the industry is only beginning to solve.</p>
 <hr>
@@ -149,14 +149,14 @@
 <hr>
 <h2 id="4-how-the-classic-layers-shift-">4. How the Classic Layers Shift 🔄</h2>
 <blockquote>
-<p>💡 <strong>Kernbotschaft:</strong> The classic layers don’t disappear — they change role. Each one becomes something subtly but importantly different when agents are first-class consumers.</p>
+<p>💡 <strong>Key Message:</strong> The classic layers don’t disappear — they change role. Each one becomes something subtly but importantly different when agents are first-class consumers.</p>
 </blockquote>
 <h3 id="8-shift-️-ui-layer-from-driver-to-oversight-surface">8. Shift 🖥️ UI Layer: From Driver to Oversight Surface</h3>
 <p>The UI Layer will not disappear — but its primary role shifts.</p>
 <p>Today: humans use the UI to <em>drive</em> every action — click, type, decide.
 Tomorrow: humans use the UI to <em>oversee</em> agent activity — set direction, inspect results, intervene when needed.</p>
 <blockquote>
-<p>📌 <strong>Beispiel:</strong> Instead of filling out a 12-field expense report, a user says <em>“submit last week’s travel expenses”</em> — and reviews a summary the agent prepared before confirming.</p>
+<p>📌 <strong>Example:</strong> Instead of filling out a 12-field expense report, a user says <em>“submit last week’s travel expenses”</em> — and reviews a summary the agent prepared before confirming.</p>
 </blockquote>
 <hr>
 <h3 id="9-shift-️-application-layer-from-human-called-to-agent-called">9. Shift ⚙️ Application Layer: From Human-Called to Agent-Called</h3>
@@ -197,17 +197,17 @@ Tomorrow: humans use the UI to <em>oversee</em> agent activity — set direction
 
 <table><thead><tr><th>Classic Role</th><th>New Role</th></tr></thead><tbody><tr><td>Store user data</td><td>Store user data + agent episodic history</td></tr><tr><td>Audit logs</td><td>Reasoning traces + decision provenance</td></tr><tr><td>Cache for performance</td><td>Context cache for agent continuity</td></tr><tr><td>State for sessions</td><td>State across agent tasks and time</td></tr></tbody></table>
 <blockquote>
-<p>💡 <strong>Einsicht:</strong> Data architecture that ignores agent memory will create the same problems that architectures without proper logging created — invisible systems that are impossible to debug or audit.</p>
+<p>💡 <strong>Insight:</strong> Data architecture that ignores agent memory will create the same problems that architectures without proper logging created — invisible systems that are impossible to debug or audit.</p>
 </blockquote>
 <hr>
 <h2 id="5-why-this-matters-now-">5. Why This Matters Now 🚀</h2>
 <blockquote>
-<p>💡 <strong>Kernbotschaft:</strong> Teams building for the next five years cannot treat the Agentic Layer as a feature to bolt on. It is a first-class architectural concern.</p>
+<p>💡 <strong>Key Message:</strong> Teams building for the next five years cannot treat the Agentic Layer as a feature to bolt on. It is a first-class architectural concern.</p>
 </blockquote>
 <p>We are at the point in the adoption curve where teams are adding “AI features” to existing architectures — a chatbot here, a summarization endpoint there. That works, for now.</p>
 <p>But the teams building for what comes next are asking a harder question:</p>
 <blockquote>
-<p>🎯 <strong>Kernfunktion:</strong> <em>If agents become capable enough to handle complex, multi-step work autonomously — what does your architecture look like then?</em></p>
+<p>🎯 <strong>Core Question:</strong> <em>If agents become capable enough to handle complex, multi-step work autonomously — what does your architecture look like then?</em></p>
 </blockquote>
 <p>That question does not have a comfortable incremental answer. It requires rethinking where logic lives, who (or what) calls your APIs, how memory is structured, and how trust is granted and revoked.</p>
 <p>The stack was never finished. It just got one layer more interesting.</p>
