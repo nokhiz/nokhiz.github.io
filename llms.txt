@@ -1,0 +1,55 @@
+# Merag Nokhiz — Cloud & On-Prem Systems Architect & Engineer
+
+> Senior Cloud & On-Prem Systems Architect and Engineer with 10+ years of experience designing and building scalable, resilient infrastructure across AWS, Azure, GCP, and on-premise environments. Focus areas: Landing Zone, Data Mesh, Internal Developer Platform (IDP), GenAI/LLMOps, MLOps, FinOps, SRE, and Zero-Trust Security.
+
+## Site
+
+- [Homepage](https://nokhiz.github.io/)
+- [Projects](https://nokhiz.github.io/projects)
+- [Blog / Thoughts](https://nokhiz.github.io/blog)
+- [Services](https://nokhiz.github.io/services)
+- [Contact](https://nokhiz.github.io/contact)
+
+## About Merag Nokhiz
+
+Merag Nokhiz is a Cloud & On-Prem Systems Architect and Engineer based in Germany. He designs developer-centric platforms that reduce operational friction while enforcing security and compliance requirements. His work spans full cloud migrations (Lift & Shift, Re-platform, Re-architect), internal developer platforms, ML infrastructure, and enterprise-scale cost optimization.
+
+**Key expertise:**
+- Cloud Architecture: AWS, Azure, GCP, hybrid and on-premise
+- Landing Zones and multi-account governance
+- Platform Engineering: Internal Developer Platforms with Backstage, golden paths, self-service infrastructure
+- MLOps & LLMOps: end-to-end ML lifecycle, feature stores, model serving, scalable inference
+- GenAI Infrastructure: agentic systems, RAG pipelines, LLM deployment
+- FinOps: 20–50% cloud cost reduction via Reserved Instances, Spot strategies, governance frameworks
+- SRE: SLOs, error budgets, GitOps-driven automation
+- Security & Compliance: Zero-Trust, IAM hardening, GDPR, SOC 2, ISO 27001
+- Infrastructure as Code: Terraform, Pulumi, Ansible
+- Containers & Orchestration: Kubernetes, Helm, ArgoCD
+
+**Contact:**
+- Email: hello@meragnokhiz.com
+- LinkedIn: https://linkedin.com/in/meragnokhiz
+- GitHub: https://github.com/nokhiz
+- Calendar: https://cal.com/nokhiz/meeting
+
+## Blog Posts
+
+Technical writing on cloud infrastructure, platform engineering, AI systems, and industry observations.
+
+- [Why PHI Matters in Cloud Architecture](https://nokhiz.github.io/blog/2_phi)
+- [The Real Cost of Cloud Data Transfer](https://nokhiz.github.io/blog/3_data_costs)
+- [Vibe Coding in Production](https://nokhiz.github.io/blog/4_vibe_code)
+- [IaC and AI: The Next Evolution](https://nokhiz.github.io/blog/5_iac_ai)
+- [The Agentic Infrastructure Layer](https://nokhiz.github.io/blog/6_agentic_layer)
+
+## Selected Projects
+
+Enterprise infrastructure and platform engineering projects across automotive, medtech, and optics industries.
+
+- BMW eSign — Digital signing platform on Azure
+- BMW Delivery & EVE — Cloud-native delivery and EV ecosystem infrastructure
+- B. Braun IDP — Internal Developer Platform for global medtech company
+- B. Braun IoT MedTech — IoT infrastructure for connected medical devices
+- B. Braun Landing Zone — AWS Landing Zone for regulated healthcare environment
+- ZEISS MLOps Infrastructure Platform — End-to-end ML platform for precision optics
+- ZEISS On-Premise HPC Cluster — High-performance computing cluster for scientific workloads
