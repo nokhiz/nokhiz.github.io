@@ -203,12 +203,12 @@
 
 <table><thead><tr><th align="left">Factor</th><th align="left">Description</th><th align="left">Optimization Focus</th></tr></thead><tbody><tr><td align="left"><strong>Price</strong></td><td align="left">The base unit cost per GPU/CPU hour.</td><td align="left">Negotiate EDPs, leverage Spot pricing.</td></tr><tr><td align="left"><strong>Volume</strong></td><td align="left">The total hours used. Influenced by <strong>Utilization</strong> and <strong>Efficiency</strong>.</td><td align="left">Maximize run-time, optimize code for speed.</td></tr><tr><td align="left"><strong>Discounts</strong></td><td align="left">Your savings from commitment or flexible pricing models.</td><td align="left">Use Reserved Instances (RI) and Spot instances.</td></tr></tbody></table>
 <p>Here is the original detailed calculation hierarchy for compute costs:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Compute Cost = </span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Compute Cost = </span></span>
 <span class="line"><span>× Price → (Unit GPU Hour Cost) </span></span>
 <span class="line"><span>× Volume → (#GPUs × Hours × Utilization × Efficiency)</span></span>
 <span class="line"><span>× Discounts → (EDP / RI / Spot)</span></span></code></pre>
 <p>And the tree diagram detailing the cost drivers:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Compute Cost</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Compute Cost</span></span>
 <span class="line"><span>├── Price</span></span>
 <span class="line"><span>│   └── Unit Price per GPU Hour</span></span>
 <span class="line"><span>├── Volume</span></span>
@@ -219,7 +219,7 @@
 <span class="line"><span>└── Discounts</span></span>
 <span class="line"><span>    └── Enterprise / RI / Spot / EDP</span></span></code></pre>
 <p>Finally, the long-form breakdown:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Data Compute Costs (After Discount) [$]</span></span>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Data Compute Costs (After Discount) [$]</span></span>
 <span class="line"><span>└─× Discount Rate [%]</span></span>
 <span class="line"><span>   └─ Data Compute Costs (Before Discount) [$]</span></span>
 <span class="line"><span>      ├─+ PaaS / SaaS Costs [$]                          (fixed or calculated separately)</span></span>
