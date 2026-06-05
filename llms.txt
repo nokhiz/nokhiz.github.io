@@ -27,7 +27,7 @@ Merag Nokhiz is a Cloud & On-Prem Systems Architect and Engineer based in German
 - Containers & Orchestration: Kubernetes, Helm, ArgoCD
 
 **Contact:**
-- Email: hello@meragnokhiz.com
+- Email: merag.nokhiz@outlook.com
 - LinkedIn: https://linkedin.com/in/meragnokhiz
 - GitHub: https://github.com/nokhiz
 - Calendar: https://cal.com/nokhiz/meeting
@@ -36,20 +36,24 @@ Merag Nokhiz is a Cloud & On-Prem Systems Architect and Engineer based in German
 
 Technical writing on cloud infrastructure, platform engineering, AI systems, and industry observations.
 
-- [Why PHI Matters in Cloud Architecture](https://nokhiz.github.io/blog/2_phi)
-- [The Real Cost of Cloud Data Transfer](https://nokhiz.github.io/blog/3_data_costs)
-- [Vibe Coding in Production](https://nokhiz.github.io/blog/4_vibe_code)
-- [IaC and AI: The Next Evolution](https://nokhiz.github.io/blog/5_iac_ai)
-- [The Agentic Infrastructure Layer](https://nokhiz.github.io/blog/6_agentic_layer)
+- [AI Cost Curves Don't Behave: Why Classical Scaling Assumptions Break](https://nokhiz.github.io/blog/8_ai_cost_curves)
+- [The AI Infrastructure Layer on Azure: Services, Patterns, and Trade-offs](https://nokhiz.github.io/blog/7_azure_ai_infra_layer)
+- [Architecture, One Layer Further: UI, Application, Data — and Agentic](https://nokhiz.github.io/blog/6_agentic_layer)
+- [Infrastructure as Code Meets AI: The DevOps Revolution You Can't Ignore](https://nokhiz.github.io/blog/5_iac_ai)
+- [Vibe Coding 2026 – Hype or Real Productivity Gain? 🧠](https://nokhiz.github.io/blog/4_vibe_code)
+- [Decoding the Cloud Bill: From Technical Systems to Budget Mastery ☁️](https://nokhiz.github.io/blog/3_data_costs)
+- [Introducing Phi ɸ: Your Meditation Cycler 🌿](https://nokhiz.github.io/blog/2_phi)
+- [Welcome to my site! 🎉](https://nokhiz.github.io/blog/1_welcome)
 
 ## Selected Projects
 
 Enterprise infrastructure and platform engineering projects across automotive, medtech, and optics industries.
 
-- BMW eSign — Digital signing platform on Azure
-- BMW Delivery & EVE — Cloud-native delivery and EV ecosystem infrastructure
-- B. Braun IDP — Internal Developer Platform for global medtech company
-- B. Braun IoT MedTech — IoT infrastructure for connected medical devices
-- B. Braun Landing Zone — AWS Landing Zone for regulated healthcare environment
-- ZEISS MLOps Infrastructure Platform — End-to-end ML platform for precision optics
-- ZEISS On-Premise HPC Cluster — High-performance computing cluster for scientific workloads
+- [Enterprise Internal Development Platform (IDP) on Azure](https://nokhiz.github.io/projects/bbraun_idp) — Design and development of an Internal Development Platform (IDP) on Azure to empower teams with standardized, secure, and automated cloud-native application environments.
+- [MedTech IoT Platform on Azure](https://nokhiz.github.io/projects/bbraun_iot_medtech) — Re-architected and migrated B. Braun’s MedTech IoT proof-of-concept into a scalable, secure, and production-grade Azure cloud platform for device data ingestion, analytics, and visualization.
+- [Enterprise Azure Landing Zone Platform on Azure](https://nokhiz.github.io/projects/bbraun_landingzone) — Design, development, and operations of a secure and scalable Azure Landing Zone for enterprise-wide cloud enablement at B. Braun.
+- [MLOps Inference MediTech Platform on Azure](https://nokhiz.github.io/projects/zeiss_mlops_inf_platf) — Designed and developed a secure, compliant, and scalable MLOPS inference platform on Microsoft Azure to enable AI-powered decision support and intelligent medical applications at ZEISS Meditec.
+- [AI Kubernetes GPU On-Premises Cluster](https://nokhiz.github.io/projects/zeiss_onpremise_hpc_cluster) — Deployed and operated an on-premises GPU Kubernetes cluster for AI model training at ZEISS Meditec, enabling high-performance, cost-efficient, and secure AI research and experimentation.
+- [Delivery App, Cloud Architecture & DevOps Leadership on AWS](https://nokhiz.github.io/projects/bmw_delivery) — Led the cloud architecture and DevOps implementation for BMW’s Delivery App, a scalable AWS-based platform that optimized vehicle delivery operations and enhanced dealership efficiency.
+- [eSignature Application on AWS](https://nokhiz.github.io/projects/bmw_esign) — Architected and implemented a scalable, secure, and compliant AWS cloud solution for BMW Group’s eSignature platform supporting digital contract signing in the Future Sales Model.
+- [Emotional Virtual Experience (EVE) App on AWS](https://nokhiz.github.io/projects/bmw_eve) — Architected and led the development of BMW’s Emotional Virtual Experience (EVE) platform on AWS — a GPU-intensive cloud solution generating photorealistic vehicle images and videos using Unreal Engine.
