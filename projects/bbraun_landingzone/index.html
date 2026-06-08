@@ -84,4 +84,27 @@ Back to Projects
       } else {
         initThemeToggle();
       }
+
+      // Mermaid SVG Text Spacing Fix
+      function fixMermaidSpacing() {
+        document.querySelectorAll('article .mermaid svg text').forEach(textEl => {
+          const tspans = textEl.querySelectorAll('tspan');
+          let yOffset = 0;
+          tspans.forEach((tspan, idx) => {
+            if (idx > 0) yOffset += 16;
+            tspan.setAttribute('dy', (idx === 0 ? 0 : 16) + 'px');
+            tspan.setAttribute('x', textEl.getAttribute('x'));
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fixMermaidSpacing);
+      } else {
+        fixMermaidSpacing();
+      }
+
+      // Re-run on content updates
+      const observer = new MutationObserver(fixMermaidSpacing);
+      observer.observe(document.body, { childList: true, subtree: true });
     </script> </body> </html>

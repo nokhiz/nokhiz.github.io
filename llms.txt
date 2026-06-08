@@ -36,6 +36,7 @@ Merag Nokhiz is a Cloud & On-Prem Systems Architect and Engineer based in German
 
 Technical writing on cloud infrastructure, platform engineering, AI systems, and industry observations.
 
+- [AgentOps & DataOps: The Infrastructure Layer Beneath Autonomous Agents](https://nokhiz.github.io/blog/10_agentops_dataops)
 - [The AI Layer Premium: 10x Costs Today, Commodity Tomorrow](https://nokhiz.github.io/blog/9_ai_layer_premium)
 - [AI Cost Curves Don't Behave: Why Classical Scaling Assumptions Break](https://nokhiz.github.io/blog/8_ai_cost_curves)
 - [The AI Infrastructure Layer on Azure: Services, Patterns, and Trade-offs](https://nokhiz.github.io/blog/7_azure_ai_infra_layer)
