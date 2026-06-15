@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="en" class="light"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0f1419" media="(prefers-color-scheme: dark)"><meta name="generator" content="Astro v6.4.2"><!-- Primary Meta --><title>AgentOps Forensics: How to Debug the Decisions You Can&#39;t See | Merag Nokhiz</title><meta name="description" content="Agent chains fail in ways that unit tests can't catch. Learn how to trace tool choice, memory, and reasoning failures — and attribute every token dollar to the call that spent it."><meta name="author" content="Merag Nokhiz"><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name="keywords" content="ai"><link rel="canonical" href="https://nokhiz.github.io/blog/12_agentops_forensics/"><!-- Open Graph --><meta property="og:type" content="article"><meta property="og:url" content="https://nokhiz.github.io/blog/12_agentops_forensics/"><meta property="og:title" content="AgentOps Forensics: How to Debug the Decisions You Can't See | Merag Nokhiz"><meta property="og:description" content="Agent chains fail in ways that unit tests can't catch. Learn how to trace tool choice, memory, and reasoning failures — and attribute every token dollar to the call that spent it."><meta property="og:image" content="https://nokhiz.github.io/og-image.png"><meta property="og:site_name" content="Merag Nokhiz"><meta property="og:locale" content="en_US"><meta property="article:published_time" content="2026-06-15T00:00:00.000Z"><meta property="article:author" content="Merag Nokhiz"><!-- Twitter / X Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="AgentOps Forensics: How to Debug the Decisions You Can't See | Merag Nokhiz"><meta name="twitter:description" content="Agent chains fail in ways that unit tests can't catch. Learn how to trace tool choice, memory, and reasoning failures — and attribute every token dollar to the call that spent it."><meta name="twitter:image" content="https://nokhiz.github.io/og-image.png"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Merag Nokhiz","url":"https://nokhiz.github.io","email":"merag.nokhiz@outlook.com","jobTitle":"Cloud & On-Prem Systems Architect & Engineer","description":"Senior Cloud & On-Prem Systems Architect with 10+ years of experience designing and building scalable infrastructure across AWS, Azure, GCP, and on-premise environments. Specializations: Landing Zone, Data Mesh, IDP, GenAI, MLOps, LLMOps, FinOps, SRE, Platform Engineering, Zero-Trust Security.","sameAs":["https://linkedin.com/in/meragnokhiz","https://github.com/nokhiz"],"knowsAbout":["Cloud Architecture","AWS","Azure","GCP","On-Premise Infrastructure","Landing Zone","Platform Engineering","Internal Developer Platform","MLOps","LLMOps","GenAI Infrastructure","FinOps","SRE","Site Reliability Engineering","Kubernetes","Terraform","Zero-Trust Security","IAM","GDPR","SOC 2","ISO 27001","Data Mesh","GitOps","Backstage","Cloud Migration"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Merag Nokhiz","url":"https://nokhiz.github.io","description":"Portfolio and technical blog of Merag Nokhiz, Cloud & On-Prem Systems Architect & Engineer."}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"AgentOps Forensics: How to Debug the Decisions You Can't See","description":"Agent chains fail in ways that unit tests can't catch. Learn how to trace tool choice, memory, and reasoning failures — and attribute every token dollar to the call that spent it.","url":"https://nokhiz.github.io/blog/12_agentops_forensics/","datePublished":"2026-06-15T00:00:00.000Z","keywords":"ai","author":{"@type":"Person","name":"Merag Nokhiz","url":"https://nokhiz.github.io"},"publisher":{"@type":"Person","name":"Merag Nokhiz","url":"https://nokhiz.github.io"}}</script><!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=optional" rel="stylesheet"><!-- Material Symbols --><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"><script>
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(theme);
+    </script><style>.bg-grid-pattern{background-image:radial-gradient(circle,rgba(255,255,255,.1) 1px,transparent 1px);background-size:20px 20px}.prose h1{display:none}article h1{font-size:1.875rem;font-weight:700;margin:2rem 0 1rem;line-height:1.3}article h2{font-size:1.875rem;font-weight:700;margin:2.5rem 0 .75rem;line-height:1.3}article h3{font-size:1.5rem;font-weight:600;margin:1.75rem 0 .5rem;line-height:1.35}article h4{font-size:1.25rem;font-weight:600;margin:1.5rem 0 .5rem}article p{margin:1rem 0;line-height:1.75}article ul,article ol{margin:1rem 0;padding-left:1.75rem}article ul{list-style-type:disc}article ol{list-style-type:decimal}article li{margin:.4rem 0;line-height:1.7}article li>ul,article li>ol{margin:.25rem 0}.prose a{color:var(--color-secondary, #3b82f6);text-decoration:underline;text-underline-offset:2px}.prose a:hover{opacity:.75}article code:not(pre code){background:#00000012;padding:.15rem .4rem;border-radius:4px;font-family:JetBrains Mono,monospace;font-size:.875em}article pre{background:#0000000f;padding:1.25rem 1.5rem;border-radius:6px;overflow-x:auto;margin:1.5rem 0;font-size:.9rem;line-height:1.6}article pre code{background:none;padding:0;font-family:JetBrains Mono,monospace;font-size:inherit}article blockquote{border-left:3px solid currentColor;padding:.75rem 1rem .75rem 1.25rem;margin:1.5rem 0;background:#00000008;border-radius:0 4px 4px 0;opacity:.85}article blockquote p{margin:0}article table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem;overflow-x:auto;display:block}article thead{border-bottom:2px solid rgba(0,0,0,.15)}article th{text-align:left;padding:.6rem 1rem;font-weight:600;white-space:nowrap}article td{padding:.6rem 1rem;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top;line-height:1.6}article tr:last-child td{border-bottom:none}article tr:hover td{background:#00000005}article hr{border:none;border-top:1px solid rgba(0,0,0,.12);margin:2rem 0}article img{max-width:100%;height:auto;margin:1.5rem 0;border-radius:6px}article strong{font-weight:600}article em{font-style:italic}article .mermaid{display:flex;justify-content:center;margin:1.5rem 0;overflow-x:auto}article svg{display:block;width:100%!important;height:auto!important;max-width:100%!important;max-height:300px;margin:0 auto}article svg p{margin:0;line-height:1}article svg foreignObject{overflow:visible}article svg[width],article svg[height]{width:100%!important;height:auto!important}.dark article code:not(pre code){background:#ffffff1a}.dark article pre{background:#ffffff0f}.dark article blockquote{background:#ffffff0a}.dark article thead{border-bottom-color:#fff3}.dark article td{border-bottom-color:#ffffff14}.dark article tr:hover td{background:#ffffff08}.dark article hr{border-top-color:#ffffff1f}
+</style>
+<link rel="stylesheet" href="/_astro/Layout.D8GVsEQI.css"></head> <body class="bg-background text-on-surface min-h-screen flex flex-col md:flex-row relative selection:bg-slate-200"> <header class="md:hidden fixed top-0 w-full z-50 overflow-hidden"> <div class="bg-background/80 dark:bg-primary-container/80 backdrop-blur-md border-b border-border-subtle dark:border-outline-variant flex justify-between items-center px-6 h-16 relative z-50"> <a href="/" class="block group"> <p class="font-headline text-lg font-medium text-primary dark:text-white leading-tight group-hover:opacity-70 transition-opacity">Merag Nokhiz</p> <p class="font-mono text-[10px] text-slate-text dark:text-on-primary-container leading-tight">Systems Architect & Engineer</p> </a> <div class="flex items-center gap-4"> <button id="theme-toggle" onclick="toggleTheme()" class="text-primary dark:text-inverse-primary hover:opacity-70 transition-opacity" aria-label="Toggle Dark/Light Mode"> <span class="material-symbols-outlined" id="theme-icon">light_mode</span> </button> <button id="mobile-menu-toggle" class="text-primary dark:text-inverse-primary hover:opacity-70 transition-opacity" aria-label="Toggle Menu"> <span class="material-symbols-outlined" id="menu-icon">menu</span> </button> </div> </div> <div id="mobile-menu" class="fixed inset-0 bg-background z-40 translate-x-full transition-transform duration-300 md:hidden pt-24 px-6"> <nav> <ul class="flex flex-col gap-8"> <li> <a href="/" class="flex items-center gap-4 text-slate-text font-headline text-2xl hover:text-primary transition-colors"> <span class="material-symbols-outlined text-2xl">person</span> About Me </a> </li><li> <a href="/blog" class="flex items-center gap-4 text-slate-text font-headline text-2xl hover:text-primary transition-colors"> <span class="material-symbols-outlined text-2xl">article</span> Blog </a> </li><li> <a href="/projects" class="flex items-center gap-4 text-slate-text font-headline text-2xl hover:text-primary transition-colors"> <span class="material-symbols-outlined text-2xl">architecture</span> Projects </a> </li><li> <a href="/tech" class="flex items-center gap-4 text-slate-text font-headline text-2xl hover:text-primary transition-colors"> <span class="material-symbols-outlined text-2xl">terminal</span> Tech </a> </li><li> <a href="/services" class="flex items-center gap-4 text-slate-text font-headline text-2xl hover:text-primary transition-colors"> <span class="material-symbols-outlined text-2xl">design_services</span> Services </a> </li><li> <a href="/contact" class="flex items-center gap-4 text-slate-text font-headline text-2xl hover:text-primary transition-colors"> <span class="material-symbols-outlined text-2xl">mail</span> Contact </a> </li> </ul> </nav> <div class="mt-12 pt-12 border-t border-border-subtle flex gap-6"> <button id="mobile-theme-toggle" onclick="toggleTheme()" class="text-slate-text hover:text-primary transition-opacity" aria-label="Toggle Dark/Light Mode"> <span class="material-symbols-outlined" id="mobile-theme-icon">light_mode</span> </button> <a href="#" class="text-slate-text hover:text-primary"><span class="material-symbols-outlined">link</span></a> <a href="#" class="text-slate-text hover:text-primary"><span class="material-symbols-outlined">terminal</span></a> </div> </div> </header> <script type="module">const o=document.getElementById("mobile-menu-toggle"),n=document.getElementById("mobile-menu"),e=document.getElementById("menu-icon");let t=!1;o?.addEventListener("click",()=>{t=!t,t?(n?.classList.remove("translate-x-full"),e&&(e.textContent="close"),document.body.style.overflow="hidden"):(n?.classList.add("translate-x-full"),e&&(e.textContent="menu"),document.body.style.overflow="")});const s=n?.querySelectorAll("a");s?.forEach(l=>{l.addEventListener("click",()=>{t=!1,n?.classList.add("translate-x-full"),e&&(e.textContent="menu"),document.body.style.overflow=""})});</script> <nav class="fixed left-0 top-0 h-screen w-64 hidden md:flex flex-col border-r border-border-subtle bg-[#eef1f5] dark:bg-primary-container py-12 px-8 z-40"> <!-- Header --> <div class="mb-12"> <a href="/" class="block group"> <h1 class="font-headline text-2xl font-medium text-primary dark:text-white mb-1 group-hover:opacity-70 transition-opacity">Merag Nokhiz</h1> <p class="font-mono text-xs text-slate-text dark:text-on-primary-container">Cloud & On-Prem Systems<br>Architect & Engineer</p> </a> </div> <!-- Navigation Links --> <ul class="flex flex-col gap-6 flex-grow"> <li> <a href="/" class="flex items-center gap-3 transition-all duration-200 group text-slate-text dark:text-on-primary-container font-body text-base hover:text-primary dark:hover:text-white hover:text-lg hover:translate-x-2"> <span class="material-symbols-outlined text-[20px] group-hover:text-primary dark:group-hover:text-white group-hover:text-[22px]">person</span> <span>About Me</span> </a> </li><li> <a href="/blog" class="flex items-center gap-3 transition-all duration-200 group text-primary dark:text-white italic font-headline text-3xl font-extrabold translate-x-2"> <span class="material-symbols-outlined text-[20px] not-italic text-[30px]">article</span> <span>Blog</span> </a> </li><li> <a href="/projects" class="flex items-center gap-3 transition-all duration-200 group text-slate-text dark:text-on-primary-container font-body text-base hover:text-primary dark:hover:text-white hover:text-lg hover:translate-x-2"> <span class="material-symbols-outlined text-[20px] group-hover:text-primary dark:group-hover:text-white group-hover:text-[22px]">architecture</span> <span>Projects</span> </a> </li><li> <a href="/tech" class="flex items-center gap-3 transition-all duration-200 group text-slate-text dark:text-on-primary-container font-body text-base hover:text-primary dark:hover:text-white hover:text-lg hover:translate-x-2"> <span class="material-symbols-outlined text-[20px] group-hover:text-primary dark:group-hover:text-white group-hover:text-[22px]">terminal</span> <span>Tech</span> </a> </li><li> <a href="/services" class="flex items-center gap-3 transition-all duration-200 group text-slate-text dark:text-on-primary-container font-body text-base hover:text-primary dark:hover:text-white hover:text-lg hover:translate-x-2"> <span class="material-symbols-outlined text-[20px] group-hover:text-primary dark:group-hover:text-white group-hover:text-[22px]">design_services</span> <span>Services</span> </a> </li><li> <a href="/contact" class="flex items-center gap-3 transition-all duration-200 group text-slate-text dark:text-on-primary-container font-body text-base hover:text-primary dark:hover:text-white hover:text-lg hover:translate-x-2"> <span class="material-symbols-outlined text-[20px] group-hover:text-primary dark:group-hover:text-white group-hover:text-[22px]">mail</span> <span>Contact</span> </a> </li> </ul> <!-- Footer Links --> <div class="mt-auto pt-8 border-t border-border-subtle dark:border-outline-variant flex gap-4"> <button id="sidebar-theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode" class="text-slate-text dark:text-on-primary-container hover:text-primary dark:hover:text-white transition-colors duration-200"> <span class="material-symbols-outlined" id="sidebar-theme-icon">light_mode</span> </button> </div> </nav> <main class="flex-grow w-full md:ml-64 pt-24 pb-12 px-6 md:pt-32 flex flex-col"> <div class="max-w-[960px] w-full mx-auto md:mx-0 md:px-12">  <article class="w-full"> <header class="mb-16"> <div class="flex items-center gap-3 mb-6"> <span class="font-mono text-xs text-slate-text">June 2026</span> </div> <h1 class="font-headline text-5xl text-primary mb-6 leading-tight">AgentOps Forensics: How to Debug the Decisions You Can&#39;t See</h1> <p class="font-body text-xl text-primary font-semibold leading-relaxed mt-4 mb-6">Agent chains fail in ways that unit tests can&#39;t catch. Learn how to trace tool choice, memory, and reasoning failures — and attribute every token dollar to the call that spent it.</p> <div class="flex flex-wrap gap-2 mt-2"> <span class="font-mono text-xs text-slate-text uppercase tracking-widest bg-surface-container-highest border border-outline-variant px-2 py-1 rounded-sm">AI</span> <span class="font-mono text-xs text-slate-text uppercase tracking-widest bg-surface-container-highest border border-outline-variant px-2 py-1 rounded-sm">ai</span> </div> </header> <div class="font-body text-lg text-slate-text space-y-8 leading-relaxed prose prose-slate"> <h1 id="agentops-forensics-how-to-debug-the-decisions-you-cant-see">AgentOps Forensics: How to Debug the Decisions You Can’t See</h1>
+<p><em>June 2026 · nokhiz.github.io</em></p>
+<h2 id="tldr--6-central-insights-">TL;DR — 6 Central Insights ⚡</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>#</th><th>Insight</th></tr></thead><tbody><tr><td>1</td><td>Agent failures are rarely in the code — they live in the <strong>reasoning trace</strong>: the sequence of tool calls, memory reads, and inferences that produced a wrong answer</td></tr><tr><td>2</td><td>Three root causes cover 90% of agent bugs: <strong>wrong tool selection</strong>, <strong>stale or missing memory</strong>, and <strong>unconstrained reasoning loops</strong></td></tr><tr><td>3</td><td>A failed agent run that costs $50 in tokens looks identical to a successful one from the outside — <strong>cost attribution requires trace-level instrumentation</strong></td></tr><tr><td>4</td><td><strong>”Works on my machine”</strong> for agents means: passed on the eval dataset, failed on a live user’s context window with a different memory state</td></tr><tr><td>5</td><td>OpenTelemetry-compatible tracing (LangSmith, Langfuse, Phoenix) is the current standard — ship spans, not print statements</td></tr><tr><td>6</td><td>Every agent span should carry: <strong>run ID, tool called, input/output tokens, latency, cost, and the reasoning step that triggered it</strong></td></tr></tbody></table>
+<hr>
+<h2 id="1-the-problem-nobody-warned-you-about-">1. The Problem Nobody Warned You About 🔍</h2>
+<blockquote>
+<p>💡 <strong>Key Message:</strong> A traditional application either works or throws an exception. An agent can do neither — it can spend 20 API calls reasoning its way to a plausible-sounding wrong answer, and your logs will show nothing except a 200 OK.</p>
+</blockquote>
+<p>Software debugging has a fundamental assumption baked in: when something goes wrong, the system produces a visible artifact. An error. A stack trace. A failed assertion. Somewhere, something signals that reality diverged from expectation.</p>
+<p>Agents break that contract.</p>
+<p>An LLM agent can call the wrong tool, read from a stale memory store, spin through a reasoning loop that reaches a confident but incorrect conclusion — and produce output that looks entirely reasonable to a downstream system. The response returns 200. The cost invoice arrives at the end of the month. Nobody knows what happened in between.</p>
+<p>The old developer joke is “works on my machine.” With agents, the new version is: <strong>the agent spent $500 learning nothing, and you only found out when the downstream workflow silently produced wrong answers for two weeks.</strong></p>
+<h3 id="1-thought-experiment--same-prompt-different-failures">1. Thought Experiment 🤔 Same Prompt, Different Failures</h3>
+<p>Imagine an agent tasked with: <em>“Summarize the last three support tickets for customer Acme Corp and draft a follow-up email.”</em></p>
+<p>On Tuesday, it works. On Wednesday, same prompt, same code:</p>
+<ul>
+<li>It calls the wrong tool — <code>search_tickets</code> instead of <code>get_tickets_by_customer</code> — and retrieves unrelated tickets from a different customer</li>
+<li>It uses a cached memory entry that refers to a conversation from two weeks ago</li>
+<li>It reasons through five steps, determines the summary is complete, and sends a draft email referencing support issues Acme Corp never had</li>
+</ul>
+<p>The code didn’t change. The model didn’t change. What changed: the memory state, the tool routing, and a slightly different context window composition. This is the class of bug that tracing was built to catch.</p>
+<hr>
+<h2 id="2-the-three-suspects-️">2. The Three Suspects 🕵️</h2>
+<blockquote>
+<p>💡 <strong>Key Message:</strong> Before you can debug an agent, you need a taxonomy. Most failures trace back to one of three root causes — and each requires a different investigative tool.</p>
+</blockquote>
+<h3 id="1-suspect-a-️-tool-choice">1. Suspect A 🛠️ Tool Choice</h3>
+<p>The agent chose the wrong tool, used the right tool with the wrong parameters, or invoked a tool at the wrong point in its reasoning sequence.</p>
+<p>This is the most common failure mode. Tool selection happens inside the model’s reasoning — it is not deterministic, and it is sensitive to:</p>
+<ul>
+<li>How tools are described in the system prompt (name, description, parameter schema)</li>
+<li>What the model has “seen” earlier in the context window</li>
+<li>Whether the model has been given too many tools and is guessing</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Symptom</th><th>Likely Cause</th></tr></thead><tbody><tr><td><strong>Correct answer, wrong data source</strong></td><td>Tool name collision or ambiguous descriptions</td></tr><tr><td><strong>Right tool, wrong parameters</strong></td><td>Missing examples in tool schema</td></tr><tr><td><strong>Tool called 8 times in a loop</strong></td><td>No termination condition, missing <code>is_done</code> signal</td></tr></tbody></table>
+<h3 id="2-suspect-b--memory">2. Suspect B 🧠 Memory</h3>
+<p>The agent read from a stale cache, failed to retrieve relevant episodic context, or had its context window polluted by irrelevant memory entries.</p>
+<p>Memory failures are subtle because the agent doesn’t know what it doesn’t know. A retrieval miss doesn’t throw an exception — the model simply reasons without the missing context and produces an answer based on what it has.</p>
+<blockquote>
+<p>📌 <strong>Example:</strong> A customer success agent retrieves the top-5 most-similar past conversations by embedding similarity. If the vector store hasn’t been updated since yesterday’s batch job, the agent operates on stale state — confidently, and without warning.</p>
+</blockquote>
+<h3 id="3-suspect-c--reasoning">3. Suspect C 💭 Reasoning</h3>
+<p>The agent’s chain-of-thought drifted. It developed a plausible but incorrect subgoal, then optimized for that subgoal instead of the original task. Or it was given a goal with enough ambiguity that multiple reasonable interpretations existed — and it picked the wrong one.</p>
+<p>Reasoning failures are the hardest to catch because they happen inside the model, not in the tool calls. The trace will show correct tool invocations; the problem is in what the model decided to do with the results.</p>
+<blockquote>
+<p>✏️ <strong>Key Rule:</strong> If the tool calls look right but the output is wrong, you are looking at a reasoning failure — not a tooling problem. Switch from trace inspection to prompt and context analysis.</p>
+</blockquote>
+<hr>
+<h2 id="3-anatomy-of-a-failed-run-a-real-trace-">3. Anatomy of a Failed Run: A Real Trace 🔬</h2>
+<blockquote>
+<p>🔬 <strong>Research:</strong> The following trace is composite but representative — built from real failure patterns seen in production agent deployments using LangSmith and Langfuse trace exports.</p>
+</blockquote>
+<h3 id="1-scene--the-setup">1. Scene 📋 The Setup</h3>
+<p><strong>Agent:</strong> Support triage agent. Goal: classify incoming ticket, retrieve similar past tickets, draft initial response.
+<strong>Tools available:</strong> <code>classify_ticket</code>, <code>search_tickets</code>, <code>get_customer_history</code>, <code>draft_response</code>
+<strong>Memory:</strong> Customer conversation history via vector store (updated nightly at 02:00 UTC)
+<strong>Invocation time:</strong> 06:47 UTC (4+ hours after memory was last refreshed)</p>
+<h3 id="2-failure--what-the-trace-revealed">2. Failure 💥 What the Trace Revealed</h3>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e2433', 'primaryTextColor': '#f0f4ff', 'primaryBorderColor': '#3a4460', 'lineColor': '#6b7fa3', 'secondaryColor': '#252d3d', 'tertiaryColor': '#1a2030', 'background': '#161c2d', 'mainBkg': '#1e2433', 'nodeBorder': '#3a4460', 'clusterBkg': '#252d3d', 'titleColor': '#f0f4ff', 'edgeLabelBackground': '#252d3d', 'fontFamily': 'monospace'}}}%%
+sequenceDiagram
+    participant U as 👤 User
+    participant A as 🤖 Agent
+    participant T as 🛠️ Tools
+    participant M as 🧠 Memory
+
+    U->>A: Billing discrepancy, Acme Corp
+    Note over A,T: Step 1: classify
+    A->>T: classify_ticket(text)
+    T-->>A: billing / medium
+
+    Note over A,T: Step 2: search tickets
+    A->>T: search_tickets(query)
+    T-->>A: 5 tickets — wrong customer ❌
+
+    Note over A,M: Step 3: customer history
+    A->>M: get_customer_history(acme)
+    M-->>A: stale — 18 days old ❌
+
+    Note over A,M: Step 4: reasoning
+    A->>A: matches #4421 — recurrence
+
+    Note over A,T: Step 5: draft response
+    A->>T: draft_response(ref=#4421)
+    T-->>A: draft with wrong reference ❌
+
+    A-->>U: Response sent ❌
+</pre>
+<p>Three failures in sequence:</p>
+<ul>
+<li><code>search_tickets</code> returned tickets without filtering by customer — wrong tool parameters, no customer ID passed</li>
+<li><code>get_customer_history</code> returned an 18-day-old cache entry — memory staleness not surfaced in the response</li>
+<li>The model’s reasoning connected these mismatched results into a coherent (but wrong) narrative</li>
+</ul>
+<p>Total tokens: 4,100. Total cost: $0.14. Time elapsed: 3.2 seconds. Zero errors in logs.</p>
+<hr>
+<h2 id="4-cost-attribution-who-paid-for-what-">4. Cost Attribution: Who Paid for What? 💸</h2>
+<blockquote>
+<p>💡 <strong>Key Message:</strong> Without span-level cost tagging, your monthly LLM invoice is a black box. You know you spent $3,200 — you don’t know that $800 of it came from one agent’s retry loop on a broken tool.</p>
+</blockquote>
+<h3 id="1-token-level-attribution-">1. Token-Level Attribution 📊</h3>
+<p>Every span in an agent trace should carry token counts — not just total tokens per run, but input vs. output tokens per step. The ratio tells you where cost is accumulating:</p>
+<ul>
+<li><strong>High input tokens in the reasoning step</strong> — context window is being loaded with too much irrelevant memory</li>
+<li><strong>High output tokens in tool-calling steps</strong> — the model is generating verbose tool call arguments; schema needs tightening</li>
+<li><strong>Repeated high-cost steps</strong> — a loop or retry pattern consuming tokens on a stuck decision</li>
+</ul>
+<h3 id="2-call-level-cost-breakdown-">2. Call-Level Cost Breakdown 💰</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent Step</th><th>Model</th><th>Input Tokens</th><th>Output Tokens</th><th>Cost</th></tr></thead><tbody><tr><td><strong>classify_ticket</strong></td><td>claude-haiku-4-5</td><td>312</td><td>48</td><td>$0.002</td></tr><tr><td><strong>search_tickets</strong></td><td>claude-haiku-4-5</td><td>580</td><td>210</td><td>$0.009</td></tr><tr><td><strong>get_customer_history</strong></td><td>claude-sonnet-4-6</td><td>1,240</td><td>180</td><td>$0.054</td></tr><tr><td><strong>Reasoning step</strong></td><td>claude-sonnet-4-6</td><td>1,480</td><td>520</td><td>$0.068</td></tr><tr><td><strong>draft_response</strong></td><td>claude-sonnet-4-6</td><td>890</td><td>420</td><td>$0.041</td></tr><tr><td><strong>Total</strong></td><td>—</td><td>4,502</td><td>1,378</td><td><strong>$0.174</strong></td></tr></tbody></table>
+<p>The reasoning step and customer history retrieval together account for 70% of the cost — and both consumed inflated input tokens because the context window carried stale, irrelevant memory entries. Fix the memory staleness, and you likely cut this run’s cost in half.</p>
+<hr>
+<h2 id="5-building-a-forensics-stack-️">5. Building a Forensics Stack 🏗️</h2>
+<blockquote>
+<p>💡 <strong>Key Message:</strong> You don’t need a custom observability platform — you need consistent span instrumentation and a place to query it. The tooling already exists.</p>
+</blockquote>
+<h4 id="1-tracing--capturing-the-decision-trail">1. Tracing 🔭 Capturing the Decision Trail</h4>
+<p>The current standard is OpenTelemetry-compatible spans, with LLM-specific semantic conventions emerging under the OpenTelemetry GenAI working group. Three platforms support this today without significant vendor lock-in:</p>
+<ul>
+<li><strong>Langfuse</strong> — open-source, self-hostable, strong cost tracking per trace. Best choice for teams that want data sovereignty</li>
+<li><strong>LangSmith</strong> — tight LangChain integration, good dataset/eval tooling. Best for teams already in the LangChain ecosystem</li>
+<li><strong>Arize Phoenix</strong> — strong on eval and drift detection, open-source. Best when you’re running evals alongside production traces</li>
+</ul>
+<p>Instrument at the agent framework level, not per-tool. One decorator wraps the entire run; individual tool calls become child spans automatically.</p>
+<h4 id="2-structured-logging--making-traces-queryable">2. Structured Logging 📝 Making Traces Queryable</h4>
+<p>Raw spans are not enough — they tell you what happened, not why. Add structured metadata to every span:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  "run_id": "run_9f2a1c",</span></span>
+<span class="line"><span>  "agent_step": "tool_call",</span></span>
+<span class="line"><span>  "tool_name": "search_tickets",</span></span>
+<span class="line"><span>  "reasoning_trigger": "find similar billing issues",</span></span>
+<span class="line"><span>  "input_tokens": 580,</span></span>
+<span class="line"><span>  "output_tokens": 210,</span></span>
+<span class="line"><span>  "latency_ms": 840,</span></span>
+<span class="line"><span>  "cost_usd": 0.009,</span></span>
+<span class="line"><span>  "memory_age_seconds": 65340,</span></span>
+<span class="line"><span>  "customer_id": "acme_corp"</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p><code>memory_age_seconds</code> is the field that would have immediately surfaced the 18-day-old cache entry in the failed run above. Add it wherever memory is retrieved.</p>
+<h4 id="3-cost-tagging-️-attribution-at-the-call-level">3. Cost Tagging 🏷️ Attribution at the Call Level</h4>
+<p>Tag every LLM call with a cost center before it reaches your billing dashboard:</p>
+<ul>
+<li><strong>Agent name</strong> — which agent type initiated this run</li>
+<li><strong>Trigger source</strong> — user-initiated, scheduled, webhook, internal</li>
+<li><strong>Customer tier</strong> — if serving B2B, attribute cost to the customer being served</li>
+<li><strong>Task category</strong> — billing, support, summarization, etc.</li>
+</ul>
+<p>Without these tags, cost spikes are un-debuggable. With them, you can answer: <em>which agent, for which customer category, triggered by which event type, is responsible for the $800 spike on Tuesday.</em></p>
+<hr>
+<h2 id="6-what-a-good-trace-looks-like-">6. What a Good Trace Looks Like 🎯</h2>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e2433', 'primaryTextColor': '#f0f4ff', 'primaryBorderColor': '#3a4460', 'lineColor': '#6b7fa3', 'secondaryColor': '#252d3d', 'tertiaryColor': '#1a2030', 'background': '#161c2d', 'mainBkg': '#1e2433', 'nodeBorder': '#3a4460', 'clusterBkg': '#252d3d', 'titleColor': '#f0f4ff', 'edgeLabelBackground': '#252d3d', 'fontFamily': 'monospace'}}}%%
+graph TD
+    RUN["🏃 Run: run_9f2a1c
+    agent=support-triage
+    trigger=webhook
+    customer_tier=enterprise"]
+
+    S1["📋 Span: classify_ticket
+    tokens_in=312 tokens_out=48
+    cost=$0.002 latency=210ms
+    result=billing/medium"]
+
+    S2["🔍 Span: search_tickets
+    tokens_in=580 tokens_out=210
+    cost=$0.009 latency=840ms
+    customer_id=acme_corp ✅"]
+
+    S3["🧠 Span: get_customer_history
+    tokens_in=1240 tokens_out=180
+    cost=$0.054 latency=620ms
+    memory_age_seconds=43 ✅"]
+
+    S4["💭 Span: reasoning
+    tokens_in=1480 tokens_out=520
+    cost=$0.068 latency=1240ms
+    decision=draft_from_ticket_#4380"]
+
+    S5["✉️ Span: draft_response
+    tokens_in=890 tokens_out=420
+    cost=$0.041 latency=980ms
+    reference_ticket=#4380 ✅"]
+
+    RUN --> S1
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+
+    style RUN fill:#2a1f3d,stroke:#5a3a7a,color:#f0f4ff
+    style S1 fill:#1a2d1a,stroke:#3a6a3a,color:#f0f4ff
+    style S2 fill:#1a2d1a,stroke:#3a6a3a,color:#f0f4ff
+    style S3 fill:#1a2d1a,stroke:#3a6a3a,color:#f0f4ff
+    style S4 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style S5 fill:#1a2d1a,stroke:#3a6a3a,color:#f0f4ff
+</pre>
+<p>Every span carries cost, tokens, and latency. Customer ID is propagated through tool calls. Memory age is explicit. The reasoning step shows which ticket it decided to reference — making the output auditable without re-running the agent.</p>
+<hr>
+<h2 id="7-the-takeaway-">7. The Takeaway 🚀</h2>
+<blockquote>
+<p>💡 <strong>Key Message:</strong> Agent observability is not optional once you have agents in production. It is the difference between a system you can improve and a system you can only restart and hope for the best.</p>
+</blockquote>
+<p>The three questions every agent deployment needs to answer:</p>
+<ul>
+<li><strong>What did the agent decide, and why?</strong> — answered by reasoning traces</li>
+<li><strong>Where did it go wrong?</strong> — answered by span-level inputs and outputs compared against expected behavior</li>
+<li><strong>What did it cost, and who should it be attributed to?</strong> — answered by cost-tagged spans</li>
+</ul>
+<p>The tooling exists. Langfuse, LangSmith, and Phoenix all provide what you need without significant overhead. The gap is instrumentation discipline — making it a first-class concern at build time, not a retrofit after the first $500 mystery invoice.</p>
+<p>You can’t debug what you can’t see. Agents make invisible decisions by default. Make them visible.</p>
+<hr>
+<p><em>Tags: ai · agents · observability · agentops</em></p> </div> <footer class="mt-section-gap pt-8 pb-2 border-t border-border-subtle"> <a href="/blog" class="inline-flex items-center gap-2 font-mono text-base text-primary hover:font-bold transition-all group"> <span class="material-symbols-outlined text-[22px] transition-transform group-hover:-translate-x-1">arrow_back</span>
+Back to Thoughts
+</a> </footer> </article>  </div> <footer class="w-full py-12 border-t border-border-subtle dark:border-outline-variant bg-[#eef1f5] dark:bg-primary-container mt-auto"> <div class="max-w-[720px] mx-auto px-6 flex flex-col items-center gap-1 text-center"> <p class="font-mono text-xs text-slate-text dark:text-on-primary-container">Building the Future with AI-first IT Solutions.</p> <p class="font-mono text-xs text-slate-text/40 dark:text-on-primary-container/40">&nbsp;</p> <p class="font-mono text-xs text-slate-text/60 dark:text-on-primary-container/60">© 2026 Merag Nokhiz</p> </div> </footer> </main> <script>
+      const htmlElement = document.documentElement;
+
+      function updateAllThemeIcons(theme) {
+        document.querySelectorAll('[id$="-theme-icon"]').forEach(icon => {
+          icon.textContent = theme === 'dark' ? 'dark_mode' : 'light_mode';
+        });
+      }
+
+      window.toggleTheme = function() {
+        const currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        htmlElement.classList.remove('light', 'dark');
+        htmlElement.classList.add(newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateAllThemeIcons(newTheme);
+      }
+
+      function initThemeToggle() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        updateAllThemeIcons(savedTheme);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initThemeToggle);
+      } else {
+        initThemeToggle();
+      }
+
+    </script> <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script> </body> </html>

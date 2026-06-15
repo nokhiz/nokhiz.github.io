@@ -36,6 +36,7 @@ Merag Nokhiz is a Cloud & On-Prem Systems Architect and Engineer based in German
 
 Technical writing on cloud infrastructure, platform engineering, AI systems, and industry observations.
 
+- [AgentOps Forensics: How to Debug the Decisions You Can't See](https://nokhiz.github.io/blog/12_agentops_forensics)
 - [Meditation: The Mental Reboot Engineers Skip](https://nokhiz.github.io/blog/11_meditation_engineers)
 - [AgentOps & DataOps: The Infrastructure Layer Beneath Autonomous Agents](https://nokhiz.github.io/blog/10_agentops_dataops)
 - [The AI Layer Premium: 10x Costs Today, Commodity Tomorrow](https://nokhiz.github.io/blog/9_ai_layer_premium)
