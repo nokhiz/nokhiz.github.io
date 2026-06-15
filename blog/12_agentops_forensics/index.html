@@ -64,6 +64,34 @@
 <blockquote>
 <p>💡 <strong>Key Message:</strong> Before you can debug an agent, you need a taxonomy. Most failures trace back to one of three root causes — and each requires a different investigative tool.</p>
 </blockquote>
+<pre class="mermaid">%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e2433', 'primaryTextColor': '#f0f4ff', 'primaryBorderColor': '#3a4460', 'lineColor': '#6b7fa3', 'secondaryColor': '#252d3d', 'tertiaryColor': '#1a2030', 'background': '#161c2d', 'mainBkg': '#1e2433', 'nodeBorder': '#3a4460', 'clusterBkg': '#252d3d', 'titleColor': '#f0f4ff', 'edgeLabelBackground': '#252d3d', 'fontFamily': 'monospace'}}}%%
+flowchart TD
+    F["⚠️ Agent Failure\n200 OK · wrong output · no error"]
+
+    F --> A["🛠️ Suspect A\nTool Choice"]
+    F --> B["🧠 Suspect B\nMemory"]
+    F --> C["💭 Suspect C\nReasoning"]
+
+    A --> A1["wrong tool selected\nor wrong parameters"]
+    A --> A2["tool called in a loop\nno termination signal"]
+
+    B --> B1["stale vector store\ncache not refreshed"]
+    B --> B2["retrieval miss\nno exception thrown"]
+
+    C --> C1["chain-of-thought drift\nwrong subgoal adopted"]
+    C --> C2["correct tool calls\nwrong conclusion"]
+
+    style F fill:#3b1f1f,stroke:#7a3a3a,color:#f0f4ff
+    style A fill:#1a2d1a,stroke:#3a6a3a,color:#f0f4ff
+    style B fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style C fill:#2a1f3d,stroke:#5a3a7a,color:#f0f4ff
+    style A1 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style A2 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style B1 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style B2 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style C1 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+    style C2 fill:#1e2433,stroke:#3a4460,color:#f0f4ff
+</pre>
 <h3 id="1-suspect-a-️-tool-choice">1. Suspect A 🛠️ Tool Choice</h3>
 <p>The agent chose the wrong tool, used the right tool with the wrong parameters, or invoked a tool at the wrong point in its reasoning sequence.</p>
 <p>This is the most common failure mode. Tool selection happens inside the model’s reasoning — it is not deterministic, and it is sensitive to:</p>
