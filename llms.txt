@@ -36,6 +36,7 @@ Merag Nokhiz is a Cloud & On-Prem Systems Architect and Engineer based in German
 
 Technical writing on cloud infrastructure, platform engineering, AI systems, and industry observations.
 
+- [Why the Coding Language Won't Matter: Specialists Are Dead, Generalists Win](https://nokhiz.github.io/blog/15_specialists_vs_generalists)
 - [The Law of the Diligent: How AI Moves Value From Skill to Effort](https://nokhiz.github.io/blog/14_law_of_diligence)
 - [The IDP Is Now the AI Delivery Platform](https://nokhiz.github.io/blog/13_idp_ai_platform)
 - [AgentOps Forensics: How to Debug the Decisions You Can't See](https://nokhiz.github.io/blog/12_agentops_forensics)
